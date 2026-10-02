@@ -11,6 +11,8 @@ Use the separately installed **official Apify CLI** as the execution layer, foll
 
 Target Actor: **`khadinakbar/ai-search-visibility-tracker`**, ID **`CFYLF6fOcyvdofuof`**. It tracks **domain/page citations**, not brand-name mentions. Read [the Actor contract](references/actor-contract.md) for input preparation and result interpretation. For CLI commands, authentication, budgeting and recovery, read [CLI workflow](references/cli-workflow.md).
 
+When routed by `seo-growth-agent`, use its shared campaign ledger and [execution rules](../seo-growth-agent/references/execution.md). Reserve this run’s allocation from the remaining total; a standalone run budget must not reset a campaign cap.
+
 ## Prepare the check
 
 Use the user's bare domain and topics/keywords; include specific HTTPS pages or competitor domains when supplied. If only a brand name is given, ask for its domain and topics. Start with a small panel relevant to the website. Use Perplexity, ChatGPT and Gemini by default; add Claude when requested.

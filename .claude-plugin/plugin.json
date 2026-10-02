@@ -1,7 +1,7 @@
 {
   "name": "ai-visibility-tracker",
-  "version": "0.2.3",
-  "description": "Track domain and page citations in AI search using Apify CLI, compare runs and prioritize content gaps.",
+  "version": "0.3.1",
+  "description": "Coordinate AI citations, competitor traffic and Google rankings, keywords, trends and backlink opportunities using Apify CLI.",
   "author": {
     "name": "Khadin Akbar"
   }

@@ -82,3 +82,7 @@ Use local JSON analysis tools already available to the host for formulas in the 
 | Host lacks execution/network | Provide commands or analyze a supplied export; no simulated live result. |
 
 Sources: [official CLI commands](https://docs.apify.com/cli/docs/reference), [Run Actor API](https://docs.apify.com/api/v2/actors-runs-post), [Postiz CLI skill pattern](https://github.com/gitroomhq/postiz-agent/blob/main/skills/postiz/SKILL.md). The Postiz repository also contains other integrations; this plugin adopts only its skill-to-external-CLI pattern.
+
+## User-owned credentials
+
+Every live user must supply their own Apify API token through the official local `apify login` flow or their host's supported secret storage. Authenticate only to that user's account. Never use, bundle, borrow or distribute the publisher's token or authenticated session. If an existing session's ownership is uncertain, have the user verify it locally before billable work. A valid existing user-owned login satisfies this requirement; do not ask the user to paste tokens into chat. Saved-export analysis needs no token.
