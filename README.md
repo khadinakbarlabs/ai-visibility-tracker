@@ -12,6 +12,8 @@ If needed, install the official CLI with `npm install -g apify-cli`, then comple
 
 ## Use
 
+OpenAI/Codex: invoke `$ai-visibility-tracker`, `$visibility-trends` or `$visibility-action-plan`, or describe your goal naturally.
+
 Claude Code: invoke `/ai-visibility-tracker:ai-visibility-tracker`, `/ai-visibility-tracker:visibility-trends` or `/ai-visibility-tracker:visibility-action-plan`. To test a source folder without installing, launch `claude --plugin-dir /path/to/ai-visibility-tracker`.
 
 Examples:
@@ -24,7 +26,7 @@ The main skill prepares input and checks current pricing before a billable run. 
 
 ## Distribution
 
-This anthropic package contains only its native manifest(s), skills, reference files, and static icon. No other provider manifests or executable runtime files are included.
+The OpenAI export contains the portable root manifest and a synchronized Codex compatibility manifest. The Anthropic export contains only its native `.claude-plugin/plugin.json` manifest. Both include the same skills and references; only the OpenAI export includes `agents/openai.yaml` UI metadata. Archives isolate the provider-specific files.
 
 Host installation does not create paid runs or schedules. A verified local package is distinct from public directory approval. Public listings require real publisher, policy/support URLs, permitted availability and platform review; missing declarations are not fabricated.
 
@@ -33,3 +35,7 @@ Host installation does not create paid runs or schedules. A verified local packa
 Topics, domain and optional page/competitor targets are sent through the CLI to Apify for the requested Actor. Credentials remain managed by the independently installed CLI. Results and run records live in your Apify account; local exports belong in a private directory outside this package. Do not submit personal, confidential or customer data as AI search prompts.
 
 Citation measurements are sampled API observations, not universal rankings across consumer apps. Missing/diagnostic results are unknown, citation position refers to the source list, and observed changes do not establish causation. No sentiment or brand-mention metrics are claimed for this Actor. Recurring tracking needs a separately configured, verified durable schedule and spend budget.
+
+## Product pages
+
+Maintained by Khadin Akbar. See the [product website](https://github.com/khadinakbarlabs/ai-visibility-tracker-docs), [support page](https://github.com/khadinakbarlabs/ai-visibility-tracker-docs/blob/main/SUPPORT.md), [privacy notice](https://github.com/khadinakbarlabs/ai-visibility-tracker-docs/blob/main/PRIVACY.md) and [terms of use](https://github.com/khadinakbarlabs/ai-visibility-tracker-docs/blob/main/TERMS.md).
