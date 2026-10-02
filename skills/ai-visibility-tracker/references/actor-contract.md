@@ -17,7 +17,7 @@ Verified on 2026-10-03 against public live Actor metadata, default-build OpenAPI
 | `responseFormat` | `concise` or `detailed`; controls answer excerpt length. |
 | `demoMode` | Health-check mode; diagnostic output is not visibility data. Startup/usage charges can still apply. |
 
-Do not configure `webhookUrl` unless the user requests delivery to a specific authorized destination. It sends the run summary outside Apify. This plugin's baseline workflow omits it.
+Omit `webhookUrl` in this baseline workflow. It would send the run summary outside Apify; this skill does not configure external delivery.
 
 For exact questions, set `queryTemplates` to an explicit empty array. Templates otherwise run before custom prompts and may exhaust the cap. No `querySelectionMode`, `brandName`, brand aliases, sentiment or mention-rate inputs exist here. Never send the old Brand Monitor input schema. `{keyword}` in a custom prompt stays literal; do not assume interpolation. For different keyword-specific exact panels, prepare separate explicitly scoped runs and account for their total cost.
 
