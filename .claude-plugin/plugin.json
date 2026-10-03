@@ -1,6 +1,6 @@
 {
   "name": "ai-visibility-tracker",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "AI visibility and SEO research: AEO/GEO, ChatGPT, Perplexity and Gemini citations, competitor traffic, SERP rankings, keyword research, Google Trends, backlinks, link opportunities and content gaps via Apify CLI.",
   "author": {
     "name": "Khadin Akbar"
@@ -44,10 +44,5 @@
     "apify-cli",
     "agent-skills"
   ],
-  "displayName": "AI Visibility Tracker",
-  "documentationUrl": "https://github.com/khadinakbarlabs/ai-visibility-tracker#readme",
-  "supportUrl": "https://github.com/khadinakbarlabs/ai-visibility-tracker/blob/main/SUPPORT.md",
-  "privacyPolicyUrl": "https://github.com/khadinakbarlabs/ai-visibility-tracker/blob/main/PRIVACY.md",
-  "termsOfServiceUrl": "https://github.com/khadinakbarlabs/ai-visibility-tracker/blob/main/TERMS.md",
-  "icon": "./assets/icon.png"
+  "displayName": "AI Visibility Tracker"
 }
