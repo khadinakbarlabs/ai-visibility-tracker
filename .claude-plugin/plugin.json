@@ -1,10 +1,11 @@
 {
   "name": "ai-visibility-tracker",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Coordinate AI citations, competitor traffic and Google rankings, keywords, trends and backlink opportunities using Apify CLI.",
   "author": {
     "name": "Khadin Akbar"
   },
   "homepage": "https://github.com/khadinakbarlabs/ai-visibility-tracker-docs",
-  "repository": "https://github.com/khadinakbarlabs/ai-visibility-tracker"
+  "repository": "https://github.com/khadinakbarlabs/ai-visibility-tracker",
+  "license": "MIT"
 }

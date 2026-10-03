@@ -2,7 +2,7 @@
 
 Published by Khadin Akbar. Updated 2026-10-03.
 
-AI Visibility Tracker is a skills-only plugin maintained by Khadin Akbar. These terms describe the supported workflow and third-party dependencies. They do not grant an open-source license; software licensing remains a separate publisher decision.
+AI Visibility Tracker is a skills-only plugin maintained by Khadin Akbar. These terms describe the supported workflow and third-party dependencies. Package files are licensed under the MIT license in LICENSE. These terms do not replace the separate terms of Apify or other providers.
 
 ## Requirements and third-party services
 
