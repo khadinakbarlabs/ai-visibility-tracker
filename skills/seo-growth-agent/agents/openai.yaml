@@ -1,0 +1,4 @@
+interface:
+  display_name: "SEO Growth Agent"
+  short_description: "Coordinate evidence-led SEO and AI citation research"
+  default_prompt: "Use $seo-growth-agent to research my brand and return evidence-linked recommendations."

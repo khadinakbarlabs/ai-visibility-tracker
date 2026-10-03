@@ -1,0 +1,4 @@
+interface:
+  display_name: "SEO Visibility Action Plan"
+  short_description: "Prioritize SEO actions from research evidence"
+  default_prompt: "Use $visibility-action-plan to combine my competitor, keyword, citation and backlink findings into one plan."

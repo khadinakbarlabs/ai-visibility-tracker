@@ -1,6 +1,6 @@
 # AI Visibility Tracker Support
 
-For help, [open a support issue](https://github.com/khadinakbarlabs/ai-visibility-tracker-docs/issues/new) with public, redacted information only.
+For help, [open a support issue](https://github.com/khadinakbarlabs/ai-visibility-tracker/issues/new) with public, redacted information only.
 
 Maintained by Khadin Akbar. Include your plugin version, host application, Apify CLI version, the operation you attempted and a short redacted error message. Never include an API token, authentication file, private run URL, raw customer data or a full conversation.
 

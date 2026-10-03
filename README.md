@@ -2,7 +2,7 @@
 
 A **skills-only plugin** that uses the separately installed official **Apify CLI**, following Postiz's skill-to-CLI pattern. Its citation workflow runs [Khadin Akbar's AI Search Visibility Tracker](https://apify.com/khadinakbar/ai-search-visibility-tracker) to measure domain/page citations, citation position, content gaps and competing domains in AI search answers.
 
-Nine coordinated skills cover SEO campaign orchestration, AI citation baselines and comparisons, competitor traffic and Google rankings, keyword opportunities, search trends, backlink samples, link prospects, and one evidence-linked action plan. The package includes no executable scripts, server, MCP connection, hooks, npm package or bundled dependencies.
+Nine coordinated skills support AI SEO, answer engine optimization (AEO), generative engine optimization (GEO), and SEO campaign orchestration, AI citation baselines and comparisons, competitor traffic and Google rankings, keyword opportunities, search trends, backlink samples, link prospects, and one evidence-linked action plan. The package includes no executable scripts, server, MCP connection, hooks, npm package or bundled dependencies.
 
 ## Requirements
 
@@ -42,6 +42,10 @@ The main skill prepares input and checks current pricing before a billable run. 
 
 Read the [mapped Actor contracts](skills/seo-growth-agent/references/actor-contracts.md) and [campaign execution rules](skills/seo-growth-agent/references/execution.md). Live specialist research uses seven additional mapped Apify Actors. Examples do not authorize spending; the campaign shares one total cap. Traffic is estimated, Trends are normalized, and backlink samples are incomplete. Results cannot guarantee improved ranks or AI citations. AI content detection is outside this release.
 
+## Open-source repository
+
+This repository is the single source for all nine skills, platform manifests, artwork, support and policy documentation. Plugin files are MIT licensed. Use GitHub issues for redacted bug reports and pull requests for improvements. Never include API tokens, authentication files or private research exports.
+
 ## Distribution
 
 The OpenAI export contains the portable root manifest and a synchronized Codex compatibility manifest. The Anthropic export contains only its native `.claude-plugin/plugin.json` manifest. Both include the same skills and references; only the OpenAI export includes `agents/openai.yaml` UI metadata. Archives isolate the provider-specific files.
@@ -56,7 +60,7 @@ Citation measurements are sampled API observations, not universal rankings acros
 
 ## Product pages
 
-Maintained by Khadin Akbar. See the [product website](https://github.com/khadinakbarlabs/ai-visibility-tracker-docs), [support page](https://github.com/khadinakbarlabs/ai-visibility-tracker-docs/blob/main/SUPPORT.md), [privacy notice](https://github.com/khadinakbarlabs/ai-visibility-tracker-docs/blob/main/PRIVACY.md) and [terms of use](https://github.com/khadinakbarlabs/ai-visibility-tracker-docs/blob/main/TERMS.md).
+Maintained by Khadin Akbar. See the [product website](https://github.com/khadinakbarlabs/ai-visibility-tracker), [support page](https://github.com/khadinakbarlabs/ai-visibility-tracker/blob/main/SUPPORT.md), [privacy notice](https://github.com/khadinakbarlabs/ai-visibility-tracker/blob/main/PRIVACY.md) and [terms of use](https://github.com/khadinakbarlabs/ai-visibility-tracker/blob/main/TERMS.md).
 
 ## User-owned credentials
 
@@ -65,3 +69,9 @@ Every live user must supply their own Apify API token through the official local
 ## License
 
 Plugin files are available under the [MIT license](LICENSE). The license applies to this skills package; separately operated Apify Actors and third-party services retain their own terms. Users supply their own Apify account and token via local login.
+
+## Research and discovery keywords
+
+AI visibility, AI search, AI SEO, SEO, AEO (answer engine optimization), GEO (generative engine optimization), LLM search, ChatGPT citations, Perplexity citations, Gemini citations, citation tracking, competitor analysis, competitor intelligence, estimated website traffic, SERP analysis, Google rankings, keyword rank tracking, keyword research, keyword opportunities, search demand, keyword difficulty when available, Google Trends, search trends, seasonality, backlink analysis, backlink research, link building opportunities, link prospect research, content gaps, Apify CLI, and agent skills.
+
+These terms describe the supported research workflows; they do not promise universal visibility measurements, complete backlink coverage or ranking gains.
