@@ -43,5 +43,11 @@
     "apify",
     "apify-cli",
     "agent-skills"
-  ]
+  ],
+  "displayName": "AI Visibility Tracker",
+  "documentationUrl": "https://github.com/khadinakbarlabs/ai-visibility-tracker#readme",
+  "supportUrl": "https://github.com/khadinakbarlabs/ai-visibility-tracker/blob/main/SUPPORT.md",
+  "privacyPolicyUrl": "https://github.com/khadinakbarlabs/ai-visibility-tracker/blob/main/PRIVACY.md",
+  "termsOfServiceUrl": "https://github.com/khadinakbarlabs/ai-visibility-tracker/blob/main/TERMS.md",
+  "icon": "./assets/icon.png"
 }
