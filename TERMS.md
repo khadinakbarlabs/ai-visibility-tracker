@@ -6,7 +6,9 @@ AI Search Visibility Tracker is a skills-only plugin maintained by Khadin Akbar.
 
 ## Requirements and third-party services
 
-You need a compatible host with local command execution and internet access, the independently installed official Apify CLI, jq, and an Apify account. Apify and your AI host operate independently and their terms, account rules, prices and usage limits apply. The plugin does not provide Apify credits, a provider account or guaranteed availability. Approve each billable run's scope and spending limit before it starts.
+You need your own Apify account and a compatible host with a capable existing MCP/connector, secure API integration or official CLI. CLI execution requires shell/network access and JSON tools. Your current host LLM performs the analysis; the skills package registers no integration or independent model service. Apify and your AI host operate independently and their terms, account rules, prices and usage limits apply. The plugin does not provide Apify credits, a provider account or guaranteed availability. Authorize billable scope and spending limits before execution; an accepted recurring plan covers its specified runs, cadence, duration and delivery without approval on every occurrence. Changes outside that scope need authorization.
+
+Scheduling depends on your selected host or Apify service. Fixed-input Apify schedules collect data and do not themselves run these report-analysis skills or enforce a monthly portfolio maximum. Complete recurring reports and hard budget controls require a verified execution environment and controller. You can request pause/resume; verify every affected collection and reporting job, since pausing a report alone does not stop data collection or already running work.
 
 ## Appropriate use
 

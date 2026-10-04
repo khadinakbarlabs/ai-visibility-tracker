@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ai-visibility-tracker",
-  "version": "0.3.6",
-  "description": "AI visibility and SEO research: AEO/GEO, ChatGPT, Perplexity and Gemini citations, competitor traffic, SERP rankings, keyword research, Google Trends, backlinks, link opportunities and content gaps via Apify CLI.",
+  "version": "0.5.0",
+  "description": "AI search visibility and SEO advisor: research-first multi-site onboarding, citations, competitor rankings, keywords, trends and link opportunities, with private context, feedback, action follow-up and saved visual reviews using user-owned Apify access.",
   "author": {
     "name": "Khadin Akbar"
   },
@@ -11,7 +11,7 @@
       "interface": {
         "displayName": "AI Search Visibility Tracker",
         "shortDescription": "SEO and AI citation research",
-        "longDescription": "Nine coordinated skills for AI visibility, AI SEO, answer engine optimization (AEO) and generative engine optimization (GEO). Research ChatGPT, Perplexity and Gemini citations; compare saved citation panels; discover competitors; estimate traffic; analyze Google SERPs and keyword rankings; research keywords, search demand and available difficulty; assess Google Trends, seasonality and search interest; compare backlink samples; qualify link building opportunities; and identify content gaps for an evidence-linked SEO action plan. Uses the independently installed official Apify CLI with your own Apify account and API token authenticated locally. Publisher credentials are never included. Live research requires shell execution, internet access and an authorized budget. No automatic monitoring, hosted runtime, AI content detection or guaranteed ranking gains.",
+        "longDescription": "Eleven coordinated skills guide your current AI assistant from website research to useful SEO actions and follow-up reviews. Infer public business context, competitors, keywords and buyer questions; ask only for missing user-owned access, spending and consequential preferences. Select research by goals, evidence and budget rather than running every Actor. Track AEO/GEO AI citations, sampled Google rankings, traffic estimates, keyword demand, Google Trends, backlink samples and qualified link opportunities. Save accessible reports, matching-panel comparisons, private context, corrections, feedback and action history for multiple websites within one portfolio ledger. Prepare briefs and review acknowledged work without promising causal ranking gains. Reuse capable user-owned Apify MCP/connector, secure API access or an independently installed official CLI; publisher credentials are never included. Optional existing authorized first-party data can enrich analysis. Recurring collection, digests and quiet alerts require supported verified scheduling, durable state and cost controls. The skills-only package includes no server, runtime, own MCP connection or publisher telemetry. Actor usage is billable; missing data remains unknown and results are sampled.",
         "developerName": "Khadin Akbar",
         "category": "Data & Analytics",
         "logo": "./assets/icon.png",
@@ -26,6 +26,9 @@
         "supportURL": "https://github.com/khadinakbarlabs/ai-visibility-tracker/blob/main/SUPPORT.md",
         "privacyPolicyURL": "https://github.com/khadinakbarlabs/ai-visibility-tracker/blob/main/PRIVACY.md",
         "termsOfServiceURL": "https://github.com/khadinakbarlabs/ai-visibility-tracker/blob/main/TERMS.md"
+      },
+      "publication": {
+        "release_notes": "0.5.0: research-first multi-site onboarding; adaptive research; private context, feedback and action follow-up; saved visual reviews; capability-aware recurring tracking and quiet alerts. Skills-only with user-owned Apify access and no publisher telemetry."
       }
     }
   },
@@ -64,6 +67,20 @@
     "content-gaps",
     "apify",
     "apify-cli",
-    "agent-skills"
+    "agent-skills",
+    "multi-website-tracking",
+    "guided-onboarding",
+    "scheduled-tracking",
+    "portfolio-reporting",
+    "visual-reporting",
+    "saved-context",
+    "apify-api",
+    "research-led-onboarding",
+    "adaptive-research",
+    "action-tracking",
+    "private-business-context",
+    "feedback",
+    "weekly-seo-review",
+    "content-briefs"
   ]
 }

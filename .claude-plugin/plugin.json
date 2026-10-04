@@ -1,7 +1,7 @@
 {
   "name": "ai-visibility-tracker",
-  "version": "0.3.6",
-  "description": "AI visibility and SEO research: AEO/GEO, ChatGPT, Perplexity and Gemini citations, competitor traffic, SERP rankings, keyword research, Google Trends, backlinks, link opportunities and content gaps via Apify CLI.",
+  "version": "0.5.0",
+  "description": "AI search visibility and SEO advisor: research-first multi-site onboarding, citations, competitor rankings, keywords, trends and link opportunities, with private context, feedback, action follow-up and saved visual reviews using user-owned Apify access.",
   "author": {
     "name": "Khadin Akbar"
   },
@@ -42,7 +42,21 @@
     "content-gaps",
     "apify",
     "apify-cli",
-    "agent-skills"
+    "agent-skills",
+    "multi-website-tracking",
+    "guided-onboarding",
+    "scheduled-tracking",
+    "portfolio-reporting",
+    "visual-reporting",
+    "saved-context",
+    "apify-api",
+    "research-led-onboarding",
+    "adaptive-research",
+    "action-tracking",
+    "private-business-context",
+    "feedback",
+    "weekly-seo-review",
+    "content-briefs"
   ],
   "displayName": "AI Search Visibility Tracker"
 }

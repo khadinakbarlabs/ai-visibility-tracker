@@ -2,6 +2,8 @@
 
 This is the Postiz-style dependency boundary: the plugin ships skills; the independently installed CLI authenticates and executes. Use `apify-cli`, published by Apify, not a custom or invented visibility CLI. Commands and stdin/parameter flags were verified with local CLI 1.8.0 and current official docs on 2026-10-03.
 
+For a capable existing MCP/connector or secure API integration, use [Apify access](../../seo-growth-agent/references/apify-access.md) instead of requiring CLI setup. This reference covers the CLI route only.
+
 ## Availability and authentication
 
 ```sh
@@ -85,4 +87,4 @@ Sources: [official CLI commands](https://docs.apify.com/cli/docs/reference), [Ru
 
 ## User-owned credentials
 
-Every live user must supply their own Apify API token through the official local `apify login` flow or their host's supported secret storage. Authenticate only to that user's account. Never use, bundle, borrow or distribute the publisher's token or authenticated session. If an existing session's ownership is uncertain, have the user verify it locally before billable work. A valid existing user-owned login satisfies this requirement; do not ask the user to paste tokens into chat. Saved-export analysis needs no token.
+Every live user authenticates to their own Apify account through an existing authorized connector/MCP connection, official local `apify login`, or secure host API-key setup. Never use, bundle, borrow or distribute publisher credentials. If ownership is uncertain, have the user verify the account locally before billable work. Existing user-owned access is sufficient; ask for connection or secure key setup only when access is missing. Never solicit tokens in ordinary chat or save them in campaign records. Saved-export analysis needs no token.
