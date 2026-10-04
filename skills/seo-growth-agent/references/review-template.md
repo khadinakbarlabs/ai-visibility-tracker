@@ -10,10 +10,10 @@ Use actual evidence. Bracketed fields are placeholders, not sample results. Keep
 
 ## Website review
 
-**What changed:** [Matched-panel change or no newer evidence.]  
-**Why it matters:** [Business implication and confidence/limitation.]  
-**Next useful work:** [At most three actions, explained tradeoffs.]  
-**Next check:** [Approved occurrence or proposed follow-up; distinguish.]  
+**What changed:** [Matched-panel change or no newer evidence.]
+**Why it matters:** [Business implication and confidence/limitation.]
+**Next useful work:** [At most three actions, explained tradeoffs.]
+**Next check:** [Approved occurrence or proposed follow-up; distinguish.]
 **Needs your input:** [Only unresolved access, spending or consequential preferences.]
 
 Include relevant evidenced modules:
