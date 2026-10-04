@@ -1,13 +1,13 @@
 {
   "name": "ai-visibility-tracker",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "AI visibility and SEO research: AEO/GEO, ChatGPT, Perplexity and Gemini citations, competitor traffic, SERP rankings, keyword research, Google Trends, backlinks, link opportunities and content gaps via Apify CLI.",
   "author": {
     "name": "Khadin Akbar"
   },
   "skills": "./skills/",
   "interface": {
-    "displayName": "AI Visibility Tracker",
+    "displayName": "AI Search Visibility Tracker",
     "shortDescription": "SEO and AI citation research",
     "longDescription": "Nine coordinated skills for AI visibility, AI SEO, answer engine optimization (AEO) and generative engine optimization (GEO). Research ChatGPT, Perplexity and Gemini citations; compare saved citation panels; discover competitors; estimate traffic; analyze Google SERPs and keyword rankings; research keywords, search demand and available difficulty; assess Google Trends, seasonality and search interest; compare backlink samples; qualify link building opportunities; and identify content gaps for an evidence-linked SEO action plan. Uses the independently installed official Apify CLI with your own Apify account and API token authenticated locally. Publisher credentials are never included. Live research requires shell execution, internet access and an authorized budget. No automatic monitoring, hosted runtime, AI content detection or guaranteed ranking gains.",
     "developerName": "Khadin Akbar",
@@ -16,7 +16,7 @@
     "composerIcon": "./assets/icon.png",
     "defaultPrompt": [
       "Research my SEO and AI citation opportunities with a shared budget.",
-      "Compare my competitors\u2019 Google rankings, traffic estimates and backlinks.",
+      "Compare my competitors’ Google rankings, traffic estimates and backlinks.",
       "Find relevant link opportunities from competitor backlinks and AI citations."
     ],
     "capabilities": [],

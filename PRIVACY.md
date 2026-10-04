@@ -1,8 +1,8 @@
-# AI Visibility Tracker Privacy Notice
+# AI Search Visibility Tracker Privacy Notice
 
 Published by Khadin Akbar. Updated 2026-10-03.
 
-AI Visibility Tracker is a skills-only plugin maintained by Khadin Akbar. It guides an AI assistant to use the independently installed official Apify CLI with the user's Apify account. It includes no publisher-operated server, database, analytics or automatic telemetry.
+AI Search Visibility Tracker is a skills-only plugin maintained by Khadin Akbar. It guides an AI assistant to use the independently installed official Apify CLI with the user's Apify account. It includes no publisher-operated server, database, analytics or automatic telemetry.
 
 ## Requested checks
 

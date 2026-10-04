@@ -1,4 +1,4 @@
-# AI Visibility Tracker
+# AI Search Visibility Tracker
 
 A **skills-only plugin** that uses the separately installed official **Apify CLI**, following Postiz's skill-to-CLI pattern. Its citation workflow runs [Khadin Akbar's AI Search Visibility Tracker](https://apify.com/khadinakbar/ai-search-visibility-tracker) to measure domain/page citations, citation position, content gaps and competing domains in AI search answers.
 

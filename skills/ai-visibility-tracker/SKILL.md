@@ -3,7 +3,7 @@ name: ai-visibility-tracker
 description: Audit whether AI search answers cite a domain or specific pages, identify citation gaps and competing domains, using Khadin Akbar's AI Search Visibility Tracker through the official Apify CLI. Use for a new citation baseline or a requested visibility check.
 ---
 
-# AI Visibility Tracker
+# AI Search Visibility Tracker
 
 Requirements: Requires local shell execution, network access, the official apify-cli with the apify api command, jq, and an authenticated Apify account. Apify usage is billable.
 

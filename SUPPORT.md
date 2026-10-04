@@ -1,4 +1,4 @@
-# AI Visibility Tracker Support
+# AI Search Visibility Tracker Support
 
 For help, [open a support issue](https://github.com/khadinakbarlabs/ai-visibility-tracker/issues/new) with public, redacted information only.
 
