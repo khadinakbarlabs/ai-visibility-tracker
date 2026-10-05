@@ -1,9 +1,11 @@
 ---
 name: competitor-intelligence
-description: Discover business competitors and compare estimated organic traffic, Google SERP presence and keyword rankings using the mapped Apify Actors.
+description: Find a website’s competitors, compare their estimated traffic or Google rankings, and review saved SERP or rank exports. Use for who outranks me, competitor discovery and fixed keyword ranking panels; distinguish estimates from observed ranks.
 ---
 
 # Discover and compare competitors
+
+For a saved export, analyze it first without login or new collection, preserving provenance, coverage and missing fields. Live Actor access/schema/pricing and spending approval are prerequisites only for new collection. Use the [shared execution rules](../seo-growth-agent/references/execution.md) and save an [operation receipt](../seo-growth-agent/references/operation-receipt.md) for partial or interrupted work.
 
 Use `khadinakbar/similarweb-alternative` for estimated organic traffic and candidate competitors, `khadinakbar/google-serp-all-in-one-scraper` for query-level discovery, and `khadinakbar/keyword-rank-tracker` for a fixed Google ranking panel.
 

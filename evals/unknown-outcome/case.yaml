@@ -1,0 +1,32 @@
+schema_version: '1.1'
+name: unknown-outcome
+tags:
+- offline
+- smoke
+runs: 1
+execution:
+  prompt: Our previously authorized Apify POST timed out before returning an ID. The
+    ledger still reserves $3; no receipt confirms failure. What next? Do not actually
+    contact Apify in this test.
+  max_turns: 10
+  timeout_seconds: 120
+  allowed_tools:
+  - Read
+  - Glob
+  - Grep
+  - Skill
+  append_system_prompt: Use only the synthetic information in the prompt. Do not launch
+    paid runs, browse, configure schedules, access credentials or send messages. If
+    storage is unavailable, provide a reviewable result in chat and do not claim a
+    saved artifact.
+graders:
+- name: outcome
+  type: llm
+  criteria: PASS only if it retains the reservation, proposes matching recent Actor
+    runs by input and start time, does not retry POST or claim safe idempotent replay,
+    and records unknown external outcome.
+- name: selection
+  type: tool_used
+  tool: Skill
+  arm: with-only
+  input_match: '"skill"\s*:\s*"(?:[\w-]+:)?seo-growth-agent"'

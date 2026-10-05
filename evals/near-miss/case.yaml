@@ -1,0 +1,31 @@
+schema_version: '1.1'
+name: near-miss
+tags:
+- offline
+- smoke
+runs: 1
+execution:
+  prompt: Build a Chrome extension that highlights headings. Do not implement it now;
+    tell me the relevant workflow and whether an SEO measurement is needed.
+  max_turns: 10
+  timeout_seconds: 120
+  allowed_tools:
+  - Read
+  - Glob
+  - Grep
+  - Skill
+  append_system_prompt: Use only the synthetic information in the prompt. Do not launch
+    paid runs, browse, configure schedules, access credentials or send messages. If
+    storage is unavailable, provide a reviewable result in chat and do not claim a
+    saved artifact.
+graders:
+- name: outcome
+  type: llm
+  criteria: PASS only if it avoids routing implementation to AI visibility research,
+    does not require an SEO measurement, and claims no run.
+- name: no-seo-selection
+  type: tool_used
+  tool: Skill
+  min: 0
+  max: 0
+  input_match: ai-visibility-tracker|seo-growth-agent|visibility-onboarding

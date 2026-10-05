@@ -1,5 +1,14 @@
 # Release notes
 
+## 0.5.1 — local audit candidate, 2026-10-05
+
+- Route concrete imports, comparisons, repairs and resumes directly; keep account prerequisites beside live collection.
+- Bound status reads, page downloads, retries and ambiguous-submission recovery; preserve partial checkpoints and held reservations.
+- Add a private operation-receipt schema, safe error taxonomy and executable handoff instructions without bundling runtime.
+- Add ten offline native host cases with semantic and selection graders; report blocked evaluations separately from passes.
+- Preserve stable plugin/skill IDs, Actor mappings, shared budgets, user-owned credentials and recurrence gates.
+
+
 ## 0.5.0 — 2026-10-05
 
 - Research-first onboarding and multiple websites/markets with one portfolio ledger.

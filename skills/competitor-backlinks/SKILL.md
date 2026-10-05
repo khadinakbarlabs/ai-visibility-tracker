@@ -1,9 +1,11 @@
 ---
 name: competitor-backlinks
-description: Compare capped own and competitor backlink samples, referring domains and anchors with the Website Backlink Checker Apify Actor.
+description: Compare my backlinks with competitors, import saved backlink samples, and identify missing referring domains or anchor patterns. Use capped Website Backlink Checker samples; full link-prospect qualification belongs to link-opportunities.
 ---
 
 # Compare backlink evidence
+
+For a saved export, analyze it first without login or new collection, preserving provenance, coverage and missing fields. Live Actor access/schema/pricing and spending approval are prerequisites only for new collection. Use the [shared execution rules](../seo-growth-agent/references/execution.md) and save an [operation receipt](../seo-growth-agent/references/operation-receipt.md) for partial or interrupted work.
 
 Use `khadinakbar/website-backlink-checker`. Collect the user's domain and confirmed competitors with matching mode, maxResults and link/subdomain filters. Explain that maxResults applies per target. Use a small backlinks sample first; request additional modes only when useful and within the campaign allocation.
 

@@ -4,15 +4,17 @@ A **skills-only plugin** that uses your available Apify connection or the separa
 
 Eleven coordinated skills support guided onboarding, one or multiple websites, AI SEO, answer engine optimization (AEO), generative engine optimization (GEO), AI citation baselines and comparisons, competitor traffic and Google rankings, keyword opportunities, search trends, backlink samples, link prospects, scheduled tracking and reports. The package includes no executable scripts, server, MCP connection, hooks, npm package or bundled dependencies.
 
-Version 0.5.0 adds goal-driven research, private business context and corrections, action/feedback history, returning reviews, concrete briefs and accessible saved report templates. The host selects useful checks within your approved scope instead of running every Actor automatically. These instructions depend on the host's available research, storage, visualization and scheduling capabilities.
+Version 0.5.1 adds offline-first import routes, bounded recovery and private [operation receipts](skills/seo-growth-agent/references/operation-receipt.md). It retains goal-driven research, private business context and corrections, action/feedback history, returning reviews, concrete briefs and accessible saved report templates. The host selects useful checks within your approved scope instead of running every Actor automatically. These instructions depend on the host's available research, storage, visualization and scheduling capabilities.
 
 ## Requirements
 
-Use your own authenticated Apify account through a capable existing MCP/connector, secure API integration or official CLI. The CLI fallback requires host shell/network access and JSON tools such as `jq`. Apify charges apply. No separate AI-provider keys are supplied by this plugin. A chat surface can execute through a capable connected Apify tool even without a shell. Without any usable connection it can research public pages, analyze exports and prepare a plan.
+Saved-export analysis, comparisons, briefs and local reviews require no Apify account or token. New collection needs your own authenticated Apify account through a capable existing MCP/connector, secure API integration or official CLI. The CLI fallback requires host shell/network access and JSON tools such as `jq`. Apify charges apply. No separate AI-provider keys are supplied by this plugin. A chat surface can execute through a capable connected Apify tool even without a shell. Without any usable connection it can research public pages, analyze exports and prepare a plan.
 
 If needed, install the official CLI with `npm install -g apify-cli`, then complete `apify login` in your own terminal. Keep your API token in Apify's local authentication flow; do not paste it into chat or package files. Verify with `apify info > /dev/null`.
 
 ## Use
+
+Focused requests go directly to [the shortest task route](skills/seo-growth-agent/references/task-routes.md). Import existing data, compare checks, repair an interrupted download or resume advice without restarting onboarding. The first useful result is a readable evidence table/brief with one next action, or an explicitly unmeasured draft when execution is unavailable. Missing data stays unknown.
 
 Start with `$seo-growth-agent` on OpenAI/Codex or `/ai-visibility-tracker:seo-growth-agent` on Claude Code for the complete campaign. It routes first use through guided onboarding and resumes saved settings on return. Specialist skills are roles guided by the host, not separate bundled processes.
 
@@ -80,7 +82,7 @@ This repository is the single source for all eleven skills, platform manifests, 
 
 ## Distribution
 
-The OpenAI export contains the portable root manifest and a synchronized Codex compatibility manifest. The Anthropic export contains only its native `.claude-plugin/plugin.json` manifest. Both include the same skills and references; only the OpenAI export includes `agents/openai.yaml` UI metadata. Archives isolate the provider-specific files.
+The OpenAI export contains the portable root manifest and a synchronized Codex compatibility manifest. The Anthropic export contains only its native `.claude-plugin/plugin.json` manifest. Both include the same skills and references; only the OpenAI export includes `agents/openai.yaml` UI metadata. The native host evaluation suite is retained as text/YAML; no executable test scaffold or runtime is bundled. Archives isolate the provider-specific files.
 
 Host installation does not create paid runs or schedules. A verified local package is distinct from public directory approval. Public listings require real publisher, policy/support URLs, permitted availability and platform review; missing declarations are not fabricated.
 
@@ -109,3 +111,11 @@ Plugin files are available under the [MIT license](LICENSE). The license applies
 AI visibility, AI search, AI SEO, SEO, AEO (answer engine optimization), GEO (generative engine optimization), LLM search, ChatGPT citations, Perplexity citations, Gemini citations, citation tracking, competitor analysis, competitor intelligence, estimated website traffic, SERP analysis, Google rankings, keyword rank tracking, keyword research, keyword opportunities, search demand, keyword difficulty when available, Google Trends, search trends, seasonality, backlink analysis, backlink research, link building opportunities, link prospect research, content gaps, guided onboarding, multi-website tracking, scheduled tracking, portfolio reporting, Apify CLI, and agent skills.
 
 These terms describe the supported research workflows; they do not promise universal visibility measurements, complete backlink coverage or ranking gains.
+
+## Local host use and updates
+
+Install the complete package: skills link to sibling skills and shared references. Copying a single SKILL.md loses required resources. Codex uses the native `.codex-plugin/plugin.json` and a registered marketplace; use the installed CLI's `plugin add` flow. Claude Code can load the source with `claude --plugin-dir /absolute/path/to/ai-visibility-tracker`; its managed directory copy follows the directory release, not uncommitted source changes. Never edit managed caches/synced generations directly.
+
+For an existing Cursor skill edition, keep all eleven sibling skill folders and references together under a supported skill root, preserving ownership and unrelated skills. Cursor discovers project `.agents/skills/` or `.cursor/skills/` and user skill roots; a plugin ZIP or manifest alone is not evidence of skill exposure. Reload the host and inspect its skill picker before claiming discovery. This package does not configure Cursor cloud sync. See [Cursor skills](https://cursor.com/docs/skills).
+
+Source/package validation, installed component exposure, model behavior, live Apify execution and directory publication are separate checks. The executable-free native cases in `evals/` use [Claude's host evaluator](https://code.claude.com/docs/en/plugin-evals), only synthetic prompts/read tools, no scaffold and no real servers. Run selected cases with `claude plugin eval . --case explicit-import --runs 1 --ablation with-without --no-publish --no-scaffold --mocks record` after local login; review prompts/graders first. Model/judge usage may consume host allowance. Keep reports private outside the package. See [EVALUATIONS.md](EVALUATIONS.md) for actual results and limits.

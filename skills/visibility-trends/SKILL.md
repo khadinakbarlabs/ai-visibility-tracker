@@ -1,6 +1,6 @@
 ---
 name: visibility-trends
-description: Compare saved AI Search Visibility Tracker runs for the same domain and question panel, identify gained or lost page citations and changed competing domains, and flag missing coverage or model changes.
+description: Compare two saved AI citation checks, explain what changed, show gained or lost page citations and flag missing answers or changed panels. Analyze exports offline or fetch existing runs through user-owned Apify access; never start a new run.
 ---
 
 # Compare AI citation visibility
@@ -24,3 +24,5 @@ Store exports privately outside the installed plugin and preserve their run IDs.
 For a portfolio, run comparisons within each website/market/panel revision, then summarize site changes with their own paired sample counts. Never pool unlike panels into one apparent citation rate. Route schedule configuration and pause/resume to `scheduled-visibility-tracking`; this comparison skill does not start paid runs. Apply saved alert thresholds only when paired coverage is sufficient, and label partial evidence separately from citation losses.
 
 Use [visual reporting and persistence](../seo-growth-agent/references/reporting.md) for readable tables/charts, machine-readable evidence and saved analytical context. Use the host LLM for synthesis and resume known state automatically.
+
+Save comparison coverage, source/run identities and one next action in an [operation receipt](../seo-growth-agent/references/operation-receipt.md). Missing chronology or panel provenance yields qualified analysis rather than a verified trend; preserve conflicting raw rows and stop aggregate claims until reconciled.

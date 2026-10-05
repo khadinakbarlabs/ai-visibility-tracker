@@ -1,13 +1,18 @@
 ---
 name: ai-visibility-tracker
-description: Audit whether AI search answers cite a domain or specific pages, identify citation gaps and competing domains, using Khadin Akbar's AI Search Visibility Tracker through user-owned Apify access. Use for a new citation baseline or a requested visibility check.
+description: Check whether ChatGPT, Perplexity or Gemini cite a website or page; import and audit saved AI citation exports without login, or prepare a new baseline using the AI Search Visibility Tracker Actor with user-owned Apify access and an approved budget.
 ---
 
 # AI Search Visibility Tracker
 
-Requirements: A capable user-owned Apify connection, official CLI session or secure API integration; see [Apify access](../seo-growth-agent/references/apify-access.md). CLI work requires shell/network access and JSON analysis tools. Apify usage is billable.
+Choose the shortest route:
 
-Use an existing capable Apify connection; the separately installed **official Apify CLI** remains the documented Postiz-style fallback. This plugin contains instructions and reference files only. Follow the host’s security and confirmation requirements throughout.
+- **Saved export / import / audit:** inspect supplied JSON and provenance, exclude diagnostics, report observed coverage and citation rates with unknowns explicit. No Apify login, CLI or new run is required. Preserve raw rows; unverifiable provenance permits qualified analysis, not a verified live measurement.
+- **New check:** infer a useful small question panel from available context, then require capable user-owned Apify access and authorized spending beside the launch. Use an existing connector or the separately installed official CLI; see [Apify access](../seo-growth-agent/references/apify-access.md).
+- **Interrupted check:** load the [operation receipt](../seo-growth-agent/references/operation-receipt.md); reconcile unknown submission or resume the same run/download offset. Do not relaunch.
+- **Compare two checks:** use `visibility-trends` directly.
+
+First useful outcome: a compact observed/planned coverage and citation table with one evidence-linked action; when no evidence exists, deliver a clearly unmeasured panel proposal and the specific blocker. Save/read back privately when supported; otherwise provide an export and disclose that persistence is unavailable. This skills-only plugin relies on the host’s tools and confirmation requirements.
 
 Target Actor: **`khadinakbar/ai-search-visibility-tracker`**, ID **`CFYLF6fOcyvdofuof`**. It tracks **domain/page citations**, not brand-name mentions. Read [the Actor contract](references/actor-contract.md) for input preparation and result interpretation. For CLI commands, authentication, budgeting and recovery, read [CLI workflow](references/cli-workflow.md).
 
@@ -33,7 +38,7 @@ Read live schema and pricing through the verified route, using the fixed Actor e
 
 Start asynchronously through the verified route with validated input and the agreed `maxTotalChargeUsd` run option. For CLI use the reference's `apify api POST` with stdin and the cap as a query parameter. The convenience `apify actors start` command does not expose that cap in the verified CLI; do not invent a flag or place the cap in Actor input. Record the returned `.data.id` before polling. On an ambiguous submission, inspect recent runs and match input/start time before retrying.
 
-Poll status without relaunching; resume by run ID after interruption. Fetch only that run's input, dataset and summary records. Verify `actId` matches the fixed Actor ID. Preserve the returned `buildId`, timestamps and charges, and paginate until all rows are collected. Use a private host directory outside the package, choosing a safe default when possible; retain the input and run ID with the result files. Do not overwrite an existing baseline.
+Poll status without relaunching; resume by run ID after interruption. Fetch only that run's input, dataset and summary records. Verify `actId` matches the fixed Actor ID. Preserve the returned `buildId`, timestamps and charges, and collect pages within the [CLI workflow’s bounds](references/cli-workflow.md). Save a partial checkpoint when a bound is reached; completeness requires terminal-run and coverage evidence. Use a private host directory outside the package, choosing a safe default when possible; retain the input and run ID with the result files. Do not overwrite an existing baseline.
 
 `SUCCEEDED` is not sufficient proof of visibility coverage. Separate `platform: diagnostic` rows and `diagnostic_status` from real checks. Inspect the actual observed keyword/query/platform tuples and summary errors. Missing results and failed platforms are unknown; do not count them as zero citations. Optional missing summary records are not the same as authentication or server failures.
 

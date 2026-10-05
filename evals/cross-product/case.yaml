@@ -1,0 +1,31 @@
+schema_version: '1.1'
+name: cross-product
+tags:
+- offline
+- smoke
+runs: 1
+execution:
+  prompt: 'Humanize the wording of this paragraph: Our dashboard helps teams review
+    results. Do not run a detector or research SEO.'
+  max_turns: 10
+  timeout_seconds: 120
+  allowed_tools:
+  - Read
+  - Glob
+  - Grep
+  - Skill
+  append_system_prompt: Use only the synthetic information in the prompt. Do not launch
+    paid runs, browse, configure schedules, access credentials or send messages. If
+    storage is unavailable, provide a reviewable result in chat and do not claim a
+    saved artifact.
+graders:
+- name: outcome
+  type: llm
+  criteria: PASS only if it revises text without treating this as SEO, detector processing
+    or paid research.
+- name: no-seo-selection
+  type: tool_used
+  tool: Skill
+  min: 0
+  max: 0
+  input_match: ai-visibility-tracker|seo-growth-agent|visibility-onboarding

@@ -1,0 +1,32 @@
+schema_version: '1.1'
+name: missing-tools
+tags:
+- offline
+- smoke
+runs: 1
+execution:
+  prompt: Prepare a citation check for example.com using the AI visibility plugin.
+    This host has no browsing, shell, Apify connector, API access or saved exports.
+    No run budget.
+  max_turns: 10
+  timeout_seconds: 120
+  allowed_tools:
+  - Read
+  - Glob
+  - Grep
+  - Skill
+  append_system_prompt: Use only the synthetic information in the prompt. Do not launch
+    paid runs, browse, configure schedules, access credentials or send messages. If
+    storage is unavailable, provide a reviewable result in chat and do not claim a
+    saved artifact.
+graders:
+- name: outcome
+  type: llm
+  criteria: PASS only if it prepares an explicitly unmeasured draft from available
+    information, states missing execution capability, asks only a consequential user-side
+    question if needed, and claims no collected results.
+- name: selection
+  type: tool_used
+  tool: Skill
+  arm: with-only
+  input_match: '"skill"\s*:\s*"(?:[\w-]+:)?ai-visibility-tracker"'

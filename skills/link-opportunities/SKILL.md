@@ -1,9 +1,11 @@
 ---
 name: link-opportunities
-description: Find and qualify relevant backlink prospects by combining Backlink Opportunity Finder results with observed competitor backlinks and AI citation sources.
+description: Find and qualify relevant sites for backlinks or AI citation opportunities, using saved competitor links and citation sources first. Research prospects and prepare publisher dossiers; this skill does not send outreach or promise links.
 ---
 
 # Qualify link and citation opportunities
+
+For a saved export, analyze it first without login or new collection, preserving provenance, coverage and missing fields. Live Actor access/schema/pricing and spending approval are prerequisites only for new collection. Use the [shared execution rules](../seo-growth-agent/references/execution.md) and save an [operation receipt](../seo-growth-agent/references/operation-receipt.md) for partial or interrupted work.
 
 Use `khadinakbar/backlink-opportunity-finder` for discovery when existing backlink/citation evidence is insufficient. Select topical keywords, supported opportunityTypes, market and exclusions; discovery result caps and pagination affect cost. Do not exclude a competitor domain automatically when the user specifically wants to study it.
 

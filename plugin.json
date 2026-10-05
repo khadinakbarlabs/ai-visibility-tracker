@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ai-visibility-tracker",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "AI search visibility and SEO advisor: research-first multi-site onboarding, citations, competitor rankings, keywords, trends and link opportunities, with private context, feedback, action follow-up and saved visual reviews using user-owned Apify access.",
   "author": {
     "name": "Khadin Akbar"
@@ -25,7 +25,8 @@
         "websiteURL": "https://github.com/khadinakbarlabs/ai-visibility-tracker",
         "supportURL": "https://github.com/khadinakbarlabs/ai-visibility-tracker/blob/main/SUPPORT.md",
         "privacyPolicyURL": "https://github.com/khadinakbarlabs/ai-visibility-tracker/blob/main/PRIVACY.md",
-        "termsOfServiceURL": "https://github.com/khadinakbarlabs/ai-visibility-tracker/blob/main/TERMS.md"
+        "termsOfServiceURL": "https://github.com/khadinakbarlabs/ai-visibility-tracker/blob/main/TERMS.md",
+        "release_notes": "0.5.1: offline-first export analysis, focused task routing, bounded polling/pagination/recovery, private operation receipts and reproducible offline host evals. Skills-only; no new paid or recurring authorization."
       },
       "publication": {
         "release_notes": "0.5.0: research-first multi-site onboarding; adaptive research; private context, feedback and action follow-up; saved visual reviews; capability-aware recurring tracking and quiet alerts. Skills-only with user-owned Apify access and no publisher telemetry."

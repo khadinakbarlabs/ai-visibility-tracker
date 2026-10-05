@@ -1,9 +1,11 @@
 ---
 name: search-trends
-description: Compare seasonality, regional interest and rising queries using the Google Trends Scraper Apify Actor, keeping normalized interest separate from search volume.
+description: Compare keyword seasonality, rising queries or regional interest; analyze saved Google Trends exports or plan a bounded Trends check. Keep normalized interest separate from search volume and compare terms in one normalization context.
 ---
 
 # Research search trends
+
+For a saved export, analyze it first without login or new collection, preserving provenance, coverage and missing fields. Live Actor access/schema/pricing and spending approval are prerequisites only for new collection. Use the [shared execution rules](../seo-growth-agent/references/execution.md) and save an [operation receipt](../seo-growth-agent/references/operation-receipt.md) for partial or interrupted work.
 
 Use `khadinakbar/google-trends-scraper`. Confirm geo, timeframe, property and topic terms. Compare at most five terms in one normalization context. Read the contract for `dataTypes`, `geo` and `property`; these differ from other Actors' country fields.
 

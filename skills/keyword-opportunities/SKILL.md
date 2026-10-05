@@ -1,9 +1,11 @@
 ---
 name: keyword-opportunities
-description: Research topic ideas, search volumes, CPC and available SEO difficulty or intent using the DataForSEO Keyword Research Apify Actor.
+description: Find keywords to target, expand topic ideas, or prioritize a saved keyword export using search volume, CPC and available difficulty or intent. Use DataForSEO Keyword Research for approved collection; do not invent missing demand metrics.
 ---
 
 # Research keyword opportunities
+
+For a saved export, analyze it first without login or new collection, preserving provenance, coverage and missing fields. Live Actor access/schema/pricing and spending approval are prerequisites only for new collection. Use the [shared execution rules](../seo-growth-agent/references/execution.md) and save an [operation receipt](../seo-growth-agent/references/operation-receipt.md) for partial or interrupted work.
 
 Use `khadinakbar/dataforseo-keyword-research`. Select `keyword_ideas` for expansion or `search_volume` for a known list. Confirm market and language; use a verified DataForSEO locationCode, not an inferred country-code conversion. Cap seeds and result count before estimating costs.
 

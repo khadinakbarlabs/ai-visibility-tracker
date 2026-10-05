@@ -1,6 +1,6 @@
 # Official Apify CLI workflow
 
-This is the Postiz-style dependency boundary: the plugin ships skills; the independently installed CLI authenticates and executes. Use `apify-cli`, published by Apify, not a custom or invented visibility CLI. Commands and stdin/parameter flags were verified with local CLI 1.8.0 and current official docs on 2026-10-03.
+This is the Postiz-style dependency boundary: the plugin ships skills; the independently installed CLI authenticates and executes. Use `apify-cli`, published by Apify, not a custom or invented visibility CLI. Commands and stdin/parameter flags were verified with local CLI 1.8.0 and current official docs on 2026-10-05. Local 1.8.0 reports that a newer version exists; do not silently upgrade. Recheck flags before live use.
 
 For a capable existing MCP/connector or secure API integration, use [Apify access](../../seo-growth-agent/references/apify-access.md) instead of requiring CLI setup. This reference covers the CLI route only.
 
@@ -50,7 +50,7 @@ apify runs info RUN_ID --json
 apify runs ls CFYLF6fOcyvdofuof --desc --limit 10 --json
 ```
 
-Substitute the actual returned ID. The list command is for recovering an uncertain submission; do not publish unrelated runs in the user's report. Match input/start time before deciding whether a fresh run is needed. Poll status with bounded reads at roughly 15–30-second intervals, retain the run ID and keep the user informed. `apify runs wait` can block; interrupted waiting is not permission to relaunch.
+Substitute the actual returned ID. The list command is for recovering an uncertain submission; do not publish unrelated runs in the user's report. Match input/start time before deciding whether a fresh run is needed. Default to at most 20 status reads, 30-second intervals and a 10-minute observation window, whichever ends first. Bound each read to 60 seconds through the host command timeout; stop and checkpoint if that control is unavailable or a read hangs. These waiting limits do not cancel or relaunch the external run. Save the run ID/status and next read in the operation receipt; keep active or uncertain budget reservations held. Resume read-only after interruption. Keep the user informed. `apify runs wait` can block; interrupted waiting is not permission to relaunch.
 
 Verify `actId: CFYLF6fOcyvdofuof`. Terminal statuses include `SUCCEEDED`, `FAILED`, `ABORTED`, `TIMED-OUT`. Preserve `buildId`, start/end timestamps, `usageTotalUsd` and charged event counts if returned. Charges are observations, not estimates; state when charge fields are unavailable or still settling.
 
@@ -64,11 +64,15 @@ apify datasets get-items DATASET_ID --format json --limit 100 --offset 0
 apify key-value-stores get-value STORE_ID LAST_RUN_SUMMARY
 ```
 
-Continue dataset pages at offsets 100, 200 and so on until a short/empty page; do not treat the first page as the full dataset. Check `OUTPUT` and `RUN_SUMMARY` too if those records exist. A missing optional summary record is acceptable only after confirming not-found; auth, quota or server errors must be reported and resolved. Collect failed runs too when useful, but identify incomplete coverage.
+Read dataset metadata first with `apify datasets info DATASET_ID --json`. Default to pages of 100, at most 20 successful pages/2,000 rows and a 10-minute collection window per invocation. Use a 60-second host timeout per read. Save each valid JSON array in a distinct page file before advancing the offset; an invalid response or failed write never advances it. Continue from the saved offset, not zero. Stop at the first bound and record PARTIAL, collected rows, item-count observation/time and nextOffset; never claim the first page or a capped download is complete. A short/empty page only supports completion after the run is terminal and metadata/observed coverage reconcile; an active dataset can still grow. Keep raw page files unchanged, including duplicates and provider-specific fields; deduplicate only derived views using documented tuple identity. Raising read bounds needs an explicit task scope, never increased paid run scope. See [operation receipts](../../seo-growth-agent/references/operation-receipt.md). Check `OUTPUT` and `RUN_SUMMARY` too if those records exist. A missing optional summary record is acceptable only after confirming not-found; auth, quota or server errors must be reported and resolved. Collect failed runs too when useful, but identify incomplete coverage.
 
 Save input, rows, summary and selected run metadata outside the plugin using private permissions and distinct names. In POSIX shells, use `umask 077` and `set -C` before redirection to prevent accidental public permissions and overwriting; on other hosts use equivalent private-file and no-overwrite controls. Check command exit status before reading a redirected file as evidence. Never package user results, auth material or raw logs into a plugin release.
 
 Use local JSON analysis tools already available to the host for formulas in the Actor contract. This plugin does not include an executable analytics script. Read-only analysis of saved exports requires neither a new Actor run nor a fresh API token.
+
+## Bounded read recovery
+
+For read-only 429/transient 5xx/network errors, make at most two retries after the initial attempt, respecting Retry-After within the observation window. If Retry-After exceeds the remaining window, checkpoint and return. Never retry invalid input, 401/403 or conflicting state automatically. Recovery of an unknown POST checks at most ten recent runs first and only matching candidates’ metadata/INPUT; if none is conclusively matched, keep UNKNOWN_EXTERNAL_OUTCOME and the reservation. A larger search is a separate bounded read step, not proof that the launch failed. No idempotency key or safe replay guarantee is claimed.
 
 ## Errors
 

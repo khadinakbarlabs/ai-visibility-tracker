@@ -1,0 +1,33 @@
+schema_version: '1.1'
+name: explicit-import
+tags:
+- offline
+- smoke
+runs: 1
+execution:
+  prompt: 'Use /ai-visibility-tracker:ai-visibility-tracker to analyze this synthetic
+    export offline: domain example.com; platform perplexity; q1 cited=true rank=2,
+    q2 cited=false rank=null, q3 missing. No Apify access, no budget, no collection.
+    Give a compact table and one useful next action.'
+  max_turns: 10
+  timeout_seconds: 120
+  allowed_tools:
+  - Read
+  - Glob
+  - Grep
+  - Skill
+  append_system_prompt: Use only the synthetic information in the prompt. Do not launch
+    paid runs, browse, configure schedules, access credentials or send messages. If
+    storage is unavailable, provide a reviewable result in chat and do not claim a
+    saved artifact.
+graders:
+- name: outcome
+  type: llm
+  criteria: PASS only if two observed checks give a 50% citation rate, rank 2 among
+    cited checks, missing q3 is unknown, no login prerequisite or claimed paid run,
+    and a useful action.
+- name: selection
+  type: tool_used
+  tool: Skill
+  arm: with-only
+  input_match: '"skill"\s*:\s*"(?:[\w-]+:)?ai-visibility-tracker"'

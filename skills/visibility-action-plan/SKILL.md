@@ -1,6 +1,6 @@
 ---
 name: visibility-action-plan
-description: Prioritize evidence-linked SEO work, prepare briefs or publisher dossiers, record feedback and completed actions, and plan comparable follow-up checks for one or multiple websites.
+description: Turn saved SEO and AI citation evidence into prioritized actions, content briefs or publisher dossiers; review advice, record feedback and plan follow-up. Drafting or improving a page does not authorize publication, outreach or paid collection.
 ---
 
 # Produce one SEO and AI visibility action plan

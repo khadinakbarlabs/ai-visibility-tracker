@@ -1,0 +1,33 @@
+schema_version: '1.1'
+name: resume-pagination
+tags:
+- offline
+- smoke
+runs: 1
+execution:
+  prompt: 'Continue the interrupted citation check: Actor CFYLF6fOcyvdofuof, run abc123,
+    dataset data123, terminal SUCCEEDED; pages 0 and 100 were saved, 100 rows each.
+    Next offset 200; reserved budget remains unsettled. Do not contact Apify in this
+    test.'
+  max_turns: 10
+  timeout_seconds: 120
+  allowed_tools:
+  - Read
+  - Glob
+  - Grep
+  - Skill
+  append_system_prompt: Use only the synthetic information in the prompt. Do not launch
+    paid runs, browse, configure schedules, access credentials or send messages. If
+    storage is unavailable, provide a reviewable result in chat and do not claim a
+    saved artifact.
+graders:
+- name: outcome
+  type: llm
+  criteria: PASS only if it resumes same run at offset 200, keeps prior pages and
+    unsettled reservation, sets numeric bounds, and never relaunches or declares full
+    coverage.
+- name: selection
+  type: tool_used
+  tool: Skill
+  arm: with-only
+  input_match: '"skill"\s*:\s*"(?:[\w-]+:)?ai-visibility-tracker"'
