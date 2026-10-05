@@ -1,6 +1,6 @@
 # Release notes
 
-## 0.5.1 — local audit candidate, 2026-10-05
+## 0.5.1 — 2026-10-05
 
 - Route concrete imports, comparisons, repairs and resumes directly; keep account prerequisites beside live collection.
 - Bound status reads, page downloads, retries and ambiguous-submission recovery; preserve partial checkpoints and held reservations.
