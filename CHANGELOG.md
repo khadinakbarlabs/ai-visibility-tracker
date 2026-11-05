@@ -1,5 +1,11 @@
 # Release notes
 
+## 0.6.1 — 2026-11-05
+
+- Apify connection now happens on the side: the assistant installs the official CLI if needed and starts `apify login --method console`, which opens Apify sign-in in the browser and returns credentials to the CLI automatically. Connector hosts show the Apify connector's one-click sign-in when the host can suggest connectors.
+- Onboarding no longer waits for sign-in; research and the plan proceed in parallel, and the baseline starts once access works.
+- Manual token entry is a last-resort secure-settings fallback; tokens are still never pasted into chat or passed as command arguments.
+
 ## 0.6.0 — 2026-11-05
 
 - **Autopilot by default.** Setup takes at most two user turns: connect Apify once (connector, `apify login` or secure `APIFY_TOKEN`) plus brand/website/must-track keywords, then one priced "How often should I track this?" choice — Weekly, Daily, Hourly pulse or On demand. That choice is the standing approval; no further per-run, per-keyword or per-chart questions.

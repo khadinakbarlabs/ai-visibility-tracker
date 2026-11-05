@@ -13,9 +13,11 @@ jq --version
 apify info > /dev/null
 ```
 
-The last command verifies the local logged-in account without printing account details. On an auth failure, the user completes `apify login` in their own terminal. Never run `apify auth token`, inspect auth files or ask for API keys in chat. Existing CLI authentication is sufficient; do not force reauthentication when a read succeeds.
+The last command verifies the local logged-in account without printing account details. Existing CLI authentication is sufficient; do not force reauthentication when a read succeeds.
 
-If the CLI is absent, explain the external dependency and use the user's installation policy. The supported npm installation is `npm install -g apify-cli`; Node/npm or an official platform-specific installer is needed. Install/upgrade only that dependency within the user's authorized setup scope. Do not install MCP servers or alter unrelated host settings. If `apify api --help` lacks `--body` or `--params`, update via the official CLI release path or give the user a setup requirement; do not invent flags.
+**Browser sign-in (default when not logged in).** Start `apify login --method console` yourself as a background command with a 10-minute host timeout. It opens Apify Console sign-in in the user's default browser and delivers the credentials back to the CLI; the user only signs in or creates a free account and approves. Tell the user one line ("I opened Apify sign-in in your browser — sign in and come back"); if the command prints a sign-in URL because no browser could open, show that URL. Keep working on onboarding research meanwhile. When the command exits, re-run `apify info > /dev/null`; success means connected. On failure or timeout, offer the same command again once, or the user's own terminal as fallback. Never use `apify login --token`, `apify auth token`, read `~/.apify/auth.json`, or ask for API keys in chat.
+
+If the CLI is absent, install the official dependency as part of setup when the user asked to start tracking: `npm install -g apify-cli` (Node/npm required; the host's permission prompt is the user's confirmation), then start the browser sign-in. If Node/npm is unavailable, give the user the official platform installer link and one command. Install/upgrade only that dependency within the user's authorized setup scope. Do not install MCP servers or alter unrelated host settings. If `apify api --help` lacks `--body` or `--params`, update via the official CLI release path or give the user a setup requirement; do not invent flags.
 
 ## Inspect the fixed Actor
 

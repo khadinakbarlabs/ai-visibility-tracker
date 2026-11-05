@@ -20,7 +20,7 @@ Start with `$seo-growth-agent` on OpenAI/Codex or `/ai-visibility-tracker:seo-gr
 
 ### Autopilot: set up once
 
-1. **Connect Apify once** — add the Apify connector (Claude/ChatGPT) or run `apify login` in your terminal and paste your API token from [Apify Console](https://console.apify.com/settings/integrations). The token never goes into chat.
+1. **Sign in to Apify once, in your browser** — the assistant opens Apify sign-in for you (via the official CLI's browser login in Claude Code/Codex, or the Apify connector's sign-in in Claude/ChatGPT) while onboarding continues. No API key to copy, and nothing secret goes into chat.
 2. **Tell it your brand, website and any must-track keywords** — or say "figure it out". It researches competitors, buyer questions and pages itself.
 3. **Pick how often to track** — Weekly (recommended), Daily, Hourly pulse or On demand, each shown with its estimated Apify cost. That choice is your one approval.
 

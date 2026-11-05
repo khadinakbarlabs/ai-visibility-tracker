@@ -4,10 +4,12 @@ Autopilot is the default experience. The user connects Apify once, answers one s
 
 ## Setup: at most two user turns
 
-**Turn 1 — the assistant asks for exactly two things, in one message:**
+**Turn 1 — start sign-in on the side and ask one question, in the same message:**
 
-1. **Connect Apify (one time).** Give the single simplest route for this host from [Apify access](apify-access.md#one-time-connection). The user's Apify API token goes into that secure setup, never into chat.
+1. **Apify sign-in starts automatically (one time).** The assistant launches the browser sign-in itself using the route for this host in [Apify access](apify-access.md#one-time-connection) and mentions it in one line ("I've opened Apify sign-in in your browser — sign in whenever you're ready"). The user signs in; no key is copied or pasted into chat.
 2. **Brand, website and must-track topics.** "What's the brand and website? Any keywords or questions you definitely want tracked? Or say *figure it out*."
+
+Sign-in and research run in parallel; whichever finishes first does not wait for the other until a paid run is needed.
 
 If a matching project already exists, skip setup entirely and resume it (see [campaign state](campaign-state.md#projects-and-memory)). If Apify is already connected, ask only item 2. If the user already gave the brand/site, ask only item 1. If both are known, ask nothing and continue.
 

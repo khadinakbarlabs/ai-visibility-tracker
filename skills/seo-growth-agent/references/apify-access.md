@@ -11,15 +11,15 @@ The package remains skills-only and registers no MCP server, connector or runtim
 
 ## One-time connection
 
-Apify access is the only account setup this plugin needs. Detect an existing route first and say nothing about setup when one works. Otherwise give the user **one** instruction for their host, not the whole table:
+Apify access is the only account setup this plugin needs, and it runs **alongside onboarding, not before it**. Detect an existing route first and say nothing about setup when one works. Otherwise the assistant starts the sign-in itself, so the user only signs in to Apify in their browser — no copying keys:
 
-| Host | What to tell the user |
+| Host | What the assistant does |
 | --- | --- |
-| Claude (web, desktop, Cowork) or ChatGPT with connectors | "Add the **Apify** connector (Settings → Connectors) and sign in, or paste your Apify API token into its setup. Get the token at https://console.apify.com/settings/integrations." |
-| Claude Code, Codex or another terminal host | "In your terminal run `apify login` and paste your Apify API token when prompted (token: https://console.apify.com/settings/integrations; install the CLI with `npm install -g apify-cli` if needed)." |
-| Host with a secure secret/env setting | "Save your Apify API token as `APIFY_TOKEN` in this app's secure settings." Use only if the host injects it without exposing the value. |
+| Claude Code, Codex or another host with a shell | Install the official CLI if missing, then run `apify login --method console` in the background. It opens Apify sign-in in the browser and hands the credentials back to the CLI automatically. Details: [CLI workflow](../../ai-visibility-tracker/references/cli-workflow.md#availability-and-authentication). |
+| Claude (web, desktop, Cowork), ChatGPT or another connector host | If the host offers a tool to suggest or add connectors, use it to show the **Apify** connector so the user can sign in with one click (OAuth). Otherwise give one line: "Add the Apify connector (Settings → Connectors, server `https://mcp.apify.com`) and sign in with Apify." |
+| Host with a secure secret/env setting only | Last resort: "Save your Apify API token as `APIFY_TOKEN` in this app's secure settings" (token from https://console.apify.com/settings/integrations). Use only if the host injects it without exposing the value. |
 
-Then verify silently with a read-only call (Actor metadata or account limits) and continue. A free Apify account works; its monthly credits bound what tracking can run (see [credits](credits-and-billing.md)). If the user pastes a token into chat anyway, do not repeat, store or use it; ask them to put it into the secure route above, and suggest rotating it in the Apify Console since chat history may retain it.
+While the user signs in, continue researching the brand and preparing the plan; never block onboarding on it. Then verify silently with a read-only call (Actor metadata or account limits) and continue. A free Apify account works; its monthly credits bound what tracking can run (see [credits](credits-and-billing.md)). If the user pastes a token into chat anyway, do not repeat, store or use it; ask them to put it into the secure route above, and suggest rotating it in the Apify Console since chat history may retain it.
 
 For MCP, inspect exposed tool schemas instead of inventing names or flags. The documented `call-actor` response provides status/storage IDs; retrieve actual dataset pages separately. Actor availability and permissions vary. Prefer a route that applies the authorized `maxTotalChargeUsd` as a run option, not Actor input, and retrieves required provenance. If a connector cannot set a charge cap, it may still run a mapped pay-per-event Actor when the validated input fixes the number of billable events (for example an exact keyword × question × platform panel) and the worst case — events × current event price + startup charges — fits the run's allocation; record the cap as `input-bounded` in the ledger. Otherwise use another verified route or explain the missing setup before paid execution. Never silently remove caps to use an easier tool. Do not run paid browser/discovery Actors outside the approved plan.
 

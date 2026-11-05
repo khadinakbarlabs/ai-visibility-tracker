@@ -20,10 +20,11 @@ execution:
 graders:
 - name: outcome
   type: llm
-  criteria: PASS only if the reply asks, in one message, for just two things — connecting
-    Apify through a secure route (not pasting the token into chat) and the brand/website
-    plus optional must-track keywords or "figure it out" — and does not ask about competitors,
-    audience, market, budget or report format, and claims no measurement.
+  criteria: PASS only if the reply handles Apify as a browser sign-in the assistant
+    starts on the side (CLI console login or connector sign-in, never a token pasted
+    into chat), asks in the same message only for the brand/website plus optional
+    must-track keywords or "figure it out", does not ask about competitors, audience,
+    market, budget or report format, and claims no measurement.
 - name: selection
   type: tool_used
   tool: Skill
