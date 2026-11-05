@@ -1,5 +1,17 @@
 # Release notes
 
+## 0.6.0 — 2026-11-05
+
+- **Autopilot by default.** Setup takes at most two user turns: connect Apify once (connector, `apify login` or secure `APIFY_TOKEN`) plus brand/website/must-track keywords, then one priced "How often should I track this?" choice — Weekly, Daily, Hourly pulse or On demand. That choice is the standing approval; no further per-run, per-keyword or per-chart questions.
+- After the choice the assistant runs the baseline, generates the dashboard, writes recommendations with implementation steps, configures and verifies the schedule and saves project memory automatically.
+- **Per-project memory** in `~/.ai-visibility-tracker/projects/<projectId>/` with a project index; projects are matched by brand, domain or workspace and never mixed.
+- **Automatic dashboard** after every run: KPI cards, citation rate by platform, trend over time, question × platform grid, competing domains, cited pages and action tracker; self-contained static HTML (no JavaScript), Markdown and CSV.
+- **Implementation playbook**: every action has exact page, numbered steps, ready-to-use outlines/schema/robots guidance, effort and the tracked questions that will measure it; optional "implement it for me" with explicit approval.
+- **Credit handling**: checks Apify usage limits before each paid launch, warns once when credits run low, pauses only the project's own jobs when credits run out, sends one upgrade/add-credits message and resumes after credits return.
+- Catch-up on return: fetch completed scheduled runs before launching anything new.
+- Connector routes without a run-level charge cap may run fixed-panel pay-per-event inputs whose worst-case cost fits the allocation (`input-bounded`).
+- Three new offline eval cases: autopilot-first-run, frequency-choice, credits-exhausted.
+
 ## 0.5.1 — 2026-10-05
 
 - Route concrete imports, comparisons, repairs and resumes directly; keep account prerequisites beside live collection.

@@ -17,13 +17,15 @@ Maximize useful supported coverage within the user's scope, budget and available
 | Market/language/device | Infer from reliable evidence/context, resolve Actor-specific country codes and label defaults | A consequential target-market choice cannot be reasonably defaulted |
 | Competitors | Discover and qualify businesses; preserve provisional candidates and evidence | A material private competitor preference is unknown |
 | Keywords/AI questions/pages | Select relevant clusters, exact questions and valid pages; save panel revision | A proprietary target list is required or a meaningful ambiguity remains |
-| Cadence/alerts/report format | Propose weekly AI/ranks, monthly exploration and readable reports; use host timezone if known | Activating paid recurrence needs scope, timing, duration and spending authorization |
-| Budget | Read live prices, calculate counts/caps/allowance, allocate one portfolio total | Authorized baseline/monthly spending is missing or exceeded |
+| Brand, website, must-track keywords/questions | Normalize what the user gives; research and add the rest | Asked once in onboarding turn 1 unless already known; "figure it out" means research them |
+| Frequency | Price Weekly (recommended), Daily, Hourly pulse and On demand from live prices; use host timezone if known | Always asked once as "How often should I track this?" — the answer accepts the plan and its caps |
+| Alerts/report format | Default to a saved dashboard + chat summary after each run and changes-only notes between digests | Only an external destination (email, Slack, etc.) needs the user's input |
+| Budget | Read live prices and credits, derive per-run and monthly caps from the chosen frequency, allocate one portfolio total | The chosen option exceeds remaining credits, or a change exceeds the accepted cap |
 | Apify access | Reuse capable user-owned connector/MCP/CLI/API; verify capabilities | User must connect/login or enter their key into secure setup |
 | Storage/delivery | Choose a private writable host workspace outside source, save report/state automatically and show its path | No persistent writable store exists, or an external destination/recipient needs user input |
 | Retention | Preserve prior evidence and panel revisions | Deletion, migration or custom retention requires a user choice |
 
-A user can override any inferred setting. Mark defaults and hypotheses visibly, with source, rationale and confidence; do not ask for approval of every field. When the user delegates discovery, research-selected panels can be ready for review while paid execution remains unapproved. Keep scope acceptance separate from spend approval.
+A user can override any inferred setting. Mark defaults and hypotheses visibly, with source, rationale and confidence; do not ask for approval of every field. When the user delegates discovery, research-selected panels can be ready for review while paid execution remains unapproved. Outside autopilot keep scope acceptance separate from spend approval; in [autopilot](../../seo-growth-agent/references/autopilot.md) the frequency choice accepts both at once, because the plan card shows the scope and its prices together.
 
 ## Review and resume
 

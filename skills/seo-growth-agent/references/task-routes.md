@@ -4,7 +4,10 @@ Inspect available files, portfolio state and conversation decisions before askin
 
 | User intent | Entry | First useful result / acceptance |
 | --- | --- | --- |
-| Start tracking my site; add another website | visibility-onboarding | Unmeasured profile/panel with sourced facts, labelled assumptions and only consequential user-side blockers |
+| Start tracking my site/brand; add another website or project | visibility-onboarding | Turn 1 asks only for Apify connection + brand/site/must-track topics; turn 2 is the priced plan card with "How often should I track this?"; then baseline, dashboard, actions and schedule without more questions |
+| What's new? Show my dashboard | seo-growth-agent | Catch-up of completed scheduled runs, refreshed charts, changes and top 3 actions; no onboarding repeat |
+| Track daily / hourly / weekly instead; stop tracking | scheduled-visibility-tracking | Re-priced plan, only this project's schedules changed and read back; ask once only if cost exceeds the accepted cap |
+| Out of credits; resume tracking | seo-growth-agent + credits reference | One upgrade/add-credits message and a paused project; resume after a passing credit check |
 | Import this citation export; audit whether AI cites my pages | ai-visibility-tracker | Observed/planned coverage, citation rate among observed checks, missing answers explicit, one supported action |
 | What changed between these two checks? | visibility-trends | Matching-tuple denominator and gains/losses; unmatched checks and changed panels separate |
 | Who outranks me? Compare competitor traffic | competitor-intelligence | Competitor evidence and rank/traffic table; estimates and observations distinguished |

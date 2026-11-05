@@ -1,7 +1,7 @@
 {
   "name": "ai-visibility-tracker",
-  "version": "0.5.1",
-  "description": "AI search visibility and SEO advisor: research-first multi-site onboarding, citations, competitor rankings, keywords, trends and link opportunities, with private context, feedback, action follow-up and saved visual reviews using user-owned Apify access.",
+  "version": "0.6.0",
+  "description": "AI search visibility tracking on autopilot: connect Apify once, give your brand and site, pick hourly, daily or weekly, and it tracks ChatGPT, Perplexity and Gemini citations, draws charts, recommends what to implement and remembers each project, using your own Apify credits.",
   "author": {
     "name": "Khadin Akbar"
   },

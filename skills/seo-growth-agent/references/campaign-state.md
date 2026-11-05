@@ -1,5 +1,15 @@
 # Campaign continuity
 
+## Projects and memory
+
+Each brand/website the user tracks is a **project** with its own memory. Default location: `~/.ai-visibility-tracker/projects/<projectId>/` (on hosts with a workspace folder, use `ai-visibility-tracker/projects/<projectId>/` inside that private workspace). Keep an index at `~/.ai-visibility-tracker/projects.json`: `[{"projectId","brand","domains","status","lastReportAt","folder"}]`. Each project folder contains `portfolio.json`, `context.md`, `handoff.md`, `reports/`, `evidence/` and `operations/`.
+
+On every request, before asking anything: read the index and pick the project by brand/domain named in the request, by the site the current workspace or repository belongs to, or by being the only project. Ask "Which project?" only when several remain plausible. A new brand or site creates a new project via onboarding; one project may hold several websites of the same business. Never mix evidence, budgets or recommendations between projects.
+
+`context.md` is the project's working memory: brand, site, audience, competitors, tracked questions, frequency, caps, decisions, corrections, open actions and what happened last. Rewrite it concisely after each run; load it first on return. Where the host also offers its own memory feature, store only a pointer ("AI visibility project PROJECT lives at FOLDER"), never evidence or secrets. Hosts without file storage keep the same files as a downloadable project export and say that continuity depends on it.
+
+## Storage rules
+
 Use a private writable host folder outside the plugin; choose a safe default when available and show the location without an unnecessary question. Save portfolio-wide defaults and separate records for each website, market and accepted panel. Do not store this user state in the source repo, plugin exports or a public issue. Create private directories/files with restricted permissions and preserve old revisions. Load existing settings on return.
 
 Maintain a budget ledger with baseline and monthly portfolio limits, site allocations, per-run allocation/reservation, Actor/run/build IDs, status, observed charges, unresolved charges, platform allowance and remaining available allocation. An unresolved run holds its reservation. Sum every site's reservations before launching; do not reset the budget when switching sites, skills or chats. Native Apify recurrence is projected separately from a host-enforced ledger; do not claim unsupported shared enforcement.
@@ -26,6 +36,9 @@ Store a readable `portfolio.json` (schema version 2) and reports/evidence in a p
     "markets": [{"marketId": "market-a", "country": "", "language": "", "device": "desktop", "actorLocations": {}}],
     "panels": [{"panelId": "panel-a", "revision": 1, "marketId": "market-a", "status": "proposed", "modules": [], "competitors": [], "googleKeywords": [], "aiKeywords": [], "aiQuestions": [], "platforms": [], "targetUrls": [], "moduleInputs": {}}]
   }],
+  "project": {"projectId": "project-a", "brand": "", "mustTrack": []},
+  "autopilot": {"enabled": false, "frequency": null, "growthScan": "monthly", "perRunCapUsd": null, "monthlyCapUsd": null, "approvalId": null},
+  "creditCheck": null,
   "tracking": [], "runs": [], "budgetLedger": [], "evidence": [], "actions": [],
   "hypotheses": [], "feedback": [], "activity": [],
   "reporting": {"destination": "in-chat", "frequency": "on-demand", "alertRules": [], "lastDelivered": [], "quietHours": null, "maxNotificationsPerPeriod": null}
@@ -36,7 +49,7 @@ Null/empty required settings are unconfigured, never zero-budget authorization. 
 
 Approval records specify plan revision, baseline/recurrence scope, caps, timing/duration and reporting destination; no raw transcript is needed. A portfolio approval never implicitly authorizes added sites, larger panels or higher frequency. Effective dates and monthly rollover must retain old ledgers and unresolved charges. Tracking records include backend, ownership marker, site/market/module/panel mapping, schedule/action IDs or host task ID, cadence/timezone, accepted caps, end/review date, nextRunAt, configuration readback, last execution/run and verification state.
 
-Status is draft, ready, baseline pending/completed, schedule prepared/configured, verified tracking, paused or blocked as applicable. One site's failure need not mark all sites failed, but unresolved reservations remain held. Pause flags must persist across chats; removing a site requires pausing its schedules first and preserving historical results. A schedule record cannot become verified solely from a successful creation response. A delivered report needs destination/acknowledgement evidence and a deduplication marker; never store credentials there.
+Status is draft, ready, baseline pending/completed, schedule prepared/configured, verified tracking, paused, paused_credits (see [credits](credits-and-billing.md)) or blocked as applicable. One site's failure need not mark all sites failed, but unresolved reservations remain held. Pause flags must persist across chats; removing a site requires pausing its schedules first and preserving historical results. A schedule record cannot become verified solely from a successful creation response. A delivered report needs destination/acknowledgement evidence and a deduplication marker; never store credentials there.
 
 Read [scheduling](../../scheduled-visibility-tracking/references/scheduling.md) for recurrence and cost controls. Compare matching windows and panels; observed changes do not establish causation.
 

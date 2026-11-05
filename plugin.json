@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ai-visibility-tracker",
-  "version": "0.5.1",
-  "description": "AI search visibility and SEO advisor: research-first multi-site onboarding, citations, competitor rankings, keywords, trends and link opportunities, with private context, feedback, action follow-up and saved visual reviews using user-owned Apify access.",
+  "version": "0.6.0",
+  "description": "AI search visibility tracking on autopilot: connect Apify once, give your brand and site, pick hourly, daily or weekly, and it tracks ChatGPT, Perplexity and Gemini citations, draws charts, recommends what to implement and remembers each project, using your own Apify credits.",
   "author": {
     "name": "Khadin Akbar"
   },
@@ -11,22 +11,22 @@
       "interface": {
         "displayName": "AI Search Visibility Tracker",
         "shortDescription": "SEO and AI citation research",
-        "longDescription": "Eleven coordinated skills guide your current AI assistant from website research to useful SEO actions and follow-up reviews. Infer public business context, competitors, keywords and buyer questions; ask only for missing user-owned access, spending and consequential preferences. Select research by goals, evidence and budget rather than running every Actor. Track AEO/GEO AI citations, sampled Google rankings, traffic estimates, keyword demand, Google Trends, backlink samples and qualified link opportunities. Save accessible reports, matching-panel comparisons, private context, corrections, feedback and action history for multiple websites within one portfolio ledger. Prepare briefs and review acknowledged work without promising causal ranking gains. Reuse capable user-owned Apify MCP/connector, secure API access or an independently installed official CLI; publisher credentials are never included. Optional existing authorized first-party data can enrich analysis. Recurring collection, digests and quiet alerts require supported verified scheduling, durable state and cost controls. The skills-only package includes no server, runtime, own MCP connection or publisher telemetry. Actor usage is billable; missing data remains unknown and results are sampled.",
+        "longDescription": "Autopilot AI search visibility tracking. Connect your own Apify account once, tell it your brand, website and any must-track keywords, and pick hourly, daily or weekly tracking; that one priced choice approves the plan. It then runs the baseline, draws charts after every run, recommends what to implement with step-by-step instructions, schedules tracking and remembers each project separately. When your Apify credits run out it pauses and tells you to upgrade or add credits. Eleven coordinated skills infer public business context, competitors, keywords and buyer questions and select research by goals, evidence and budget rather than running every Actor. Track AEO/GEO AI citations, sampled Google rankings, traffic estimates, keyword demand, Google Trends, backlink samples and qualified link opportunities. Save accessible reports, matching-panel comparisons, private context, corrections, feedback and action history for multiple websites within one portfolio ledger. Prepare briefs and review acknowledged work without promising causal ranking gains. Reuse capable user-owned Apify MCP/connector, secure API access or an independently installed official CLI; publisher credentials are never included. Optional existing authorized first-party data can enrich analysis. Recurring collection, digests and quiet alerts require supported verified scheduling, durable state and cost controls. The skills-only package includes no server, runtime, own MCP connection or publisher telemetry. Actor usage is billable; missing data remains unknown and results are sampled.",
         "developerName": "Khadin Akbar",
         "category": "Data & Analytics",
         "logo": "./assets/icon.png",
         "composerIcon": "./assets/icon.png",
         "defaultPrompt": [
-          "Research my SEO and AI citation opportunities with a shared budget.",
-          "Compare my competitors’ Google rankings, traffic estimates and backlinks.",
-          "Find relevant link opportunities from competitor backlinks and AI citations."
+          "Track my brand in AI search and set everything up for me.",
+          "What's new with my AI visibility? Show my dashboard.",
+          "What should I implement this week to get cited more?"
         ],
         "capabilities": [],
         "websiteURL": "https://github.com/khadinakbarlabs/ai-visibility-tracker",
         "supportURL": "https://github.com/khadinakbarlabs/ai-visibility-tracker/blob/main/SUPPORT.md",
         "privacyPolicyURL": "https://github.com/khadinakbarlabs/ai-visibility-tracker/blob/main/PRIVACY.md",
         "termsOfServiceURL": "https://github.com/khadinakbarlabs/ai-visibility-tracker/blob/main/TERMS.md",
-        "release_notes": "0.5.1: offline-first export analysis, focused task routing, bounded polling/pagination/recovery, private operation receipts and reproducible offline host evals. Skills-only; no new paid or recurring authorization."
+        "release_notes": "0.6.0: autopilot. Connect Apify once, answer one onboarding message, pick hourly/daily/weekly tracking; then automatic baseline, charts, recommendations with implementation steps, scheduling, per-project memory and credit-exhaustion handling. Skills-only; uses your own Apify credits."
       },
       "publication": {
         "release_notes": "0.5.0: research-first multi-site onboarding; adaptive research; private context, feedback and action follow-up; saved visual reviews; capability-aware recurring tracking and quiet alerts. Skills-only with user-owned Apify access and no publisher telemetry."

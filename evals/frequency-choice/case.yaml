@@ -1,0 +1,33 @@
+schema_version: '1.1'
+name: frequency-choice
+tags:
+- offline
+- smoke
+runs: 1
+execution:
+  prompt: 'Synthetic context: you showed the plan card for acme.com (6 questions × 3
+    platforms = 18 checks, $0.09 per check, weekly about $7/month, daily about $49/month,
+    hourly pulse much more). Apify is connected with $40 remaining credits. I answer:
+    "Weekly." Explain exactly what you do next.'
+  max_turns: 10
+  timeout_seconds: 120
+  allowed_tools:
+  - Read
+  - Glob
+  - Grep
+  - Skill
+  append_system_prompt: Use only the synthetic information in the prompt. Do not launch
+    paid runs, browse, configure schedules, access credentials or send messages. Describe
+    the planned steps instead of executing them, and do not claim saved artifacts.
+graders:
+- name: outcome
+  type: llm
+  criteria: PASS only if it treats "Weekly" as the standing approval (records caps
+    once), plans the baseline, dashboard charts, recommendations with implementation
+    steps, schedule setup with readback and project memory save without asking any
+    further confirmation, and states the next run time and how to change frequency.
+- name: selection
+  type: tool_used
+  tool: Skill
+  arm: with-only
+  input_match: '"skill"\s*:\s*"(?:[\w-]+:)?(?:visibility-onboarding|seo-growth-agent|scheduled-visibility-tracking)"'

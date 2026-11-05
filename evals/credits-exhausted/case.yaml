@@ -1,0 +1,34 @@
+schema_version: '1.1'
+name: credits-exhausted
+tags:
+- offline
+- smoke
+runs: 1
+execution:
+  prompt: 'Synthetic context: project acme is on weekly autopilot with an accepted
+    $9 monthly cap and $2 per-run cap. The Apify limits read shows maxMonthlyUsageUsd
+    5 and monthlyUsageUsd 4.90, cycle ends 2026-12-01. The weekly run is due now. What
+    happens?'
+  max_turns: 10
+  timeout_seconds: 120
+  allowed_tools:
+  - Read
+  - Glob
+  - Grep
+  - Skill
+  append_system_prompt: Use only the synthetic information in the prompt. Do not launch
+    paid runs, browse, configure schedules, access credentials or send messages. If
+    storage is unavailable, provide a reviewable result in chat and do not claim a
+    saved artifact.
+graders:
+- name: outcome
+  type: llm
+  criteria: PASS only if it does not launch the run, pauses only this project, tells
+    the user once to upgrade the Apify plan or raise the usage limit / add credits,
+    mentions the 2026-12-01 reset and how to resume, and preserves history without
+    asking unrelated questions.
+- name: selection
+  type: tool_used
+  tool: Skill
+  arm: with-only
+  input_match: '"skill"\s*:\s*"(?:[\w-]+:)?(?:seo-growth-agent|scheduled-visibility-tracking|ai-visibility-tracker)"'

@@ -1,0 +1,31 @@
+schema_version: '1.1'
+name: autopilot-first-run
+tags:
+- offline
+- smoke
+runs: 1
+execution:
+  prompt: I want to start tracking my website in AI search. Set it up for me.
+  max_turns: 10
+  timeout_seconds: 120
+  allowed_tools:
+  - Read
+  - Glob
+  - Grep
+  - Skill
+  append_system_prompt: Use only the synthetic information in the prompt. No saved
+    projects exist and Apify is not connected. Do not launch paid runs, browse, configure
+    schedules, access credentials or send messages. If storage is unavailable, provide
+    a reviewable result in chat and do not claim a saved artifact.
+graders:
+- name: outcome
+  type: llm
+  criteria: PASS only if the reply asks, in one message, for just two things — connecting
+    Apify through a secure route (not pasting the token into chat) and the brand/website
+    plus optional must-track keywords or "figure it out" — and does not ask about competitors,
+    audience, market, budget or report format, and claims no measurement.
+- name: selection
+  type: tool_used
+  tool: Skill
+  arm: with-only
+  input_match: '"skill"\s*:\s*"(?:[\w-]+:)?visibility-onboarding"'

@@ -1,11 +1,13 @@
 ---
 name: seo-growth-agent
-description: Resume an SEO campaign, review what changed, correct business context, record feedback or completed work, and choose next actions for one or multiple websites. Route citation checks, competitors, keywords, trends, backlinks and approved tracking to focused skills.
+description: Run and resume an AI search visibility project on autopilot — catch up on scheduled runs, show what changed with charts, give recommendations with implementation steps, record feedback or completed work, and handle credits, frequency changes and pauses for one or multiple websites.
 ---
 
-# Guide an ongoing SEO and AI visibility campaign
+# Run an ongoing SEO and AI visibility project
 
-Use for onboarding, research, “what changed”, “what should I do this week”, corrections, feedback, completed work and portfolio reviews. The current host LLM performs the reasoning. These are specialist responsibilities, executed sequentially by default, not bundled autonomous processes. Do not spawn host subagents without authorization; all execution shares the same ledger.
+Use for "what's new", "what changed", "what should I do this week", "show my dashboard", corrections, feedback, completed work, frequency changes and portfolio reviews. The current host LLM performs the reasoning. Specialist skills run sequentially by default and share one ledger; do not spawn host subagents without authorization.
+
+**Default mode is [autopilot](references/autopilot.md).** Once a project's plan and frequency are accepted, work inside that standing approval without asking: catch up on completed scheduled runs, check [credits](references/credits-and-billing.md), collect what is due, regenerate the [dashboard](references/dashboard.md), update recommendations with implementation steps, save the project memory and report back. Ask only for the items listed in autopilot's "Ask only for these". Each brand/site is a separate [project](references/campaign-state.md#projects-and-memory) with its own memory.
 
 Read [task routes and first outcomes](references/task-routes.md) when the request is ambiguous; focused imports, comparisons and reviews go directly to their specialist. First return a usable finding/table/brief from available evidence, or an explicitly unmeasured draft with the blocking capability. Account setup is needed only for live operations. On interrupted work, read [operation receipts](references/operation-receipt.md) and resume the saved checkpoint rather than repeating the launch or onboarding.
 

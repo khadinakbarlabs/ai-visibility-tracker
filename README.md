@@ -4,7 +4,7 @@ A **skills-only plugin** that uses your available Apify connection or the separa
 
 Eleven coordinated skills support guided onboarding, one or multiple websites, AI SEO, answer engine optimization (AEO), generative engine optimization (GEO), AI citation baselines and comparisons, competitor traffic and Google rankings, keyword opportunities, search trends, backlink samples, link prospects, scheduled tracking and reports. The package includes no executable scripts, server, MCP connection, hooks, npm package or bundled dependencies.
 
-Version 0.5.1 adds offline-first import routes, bounded recovery and private [operation receipts](skills/seo-growth-agent/references/operation-receipt.md). It retains goal-driven research, private business context and corrections, action/feedback history, returning reviews, concrete briefs and accessible saved report templates. The host selects useful checks within your approved scope instead of running every Actor automatically. These instructions depend on the host's available research, storage, visualization and scheduling capabilities.
+Version 0.6.0 adds **autopilot**: connect Apify once, answer one onboarding message, pick hourly/daily/weekly tracking, and the assistant runs tracking, charts, recommendations with implementation steps and credit handling by itself, with per-project memory. Version 0.5.1 added offline-first import routes, bounded recovery and private [operation receipts](skills/seo-growth-agent/references/operation-receipt.md). It retains goal-driven research, private business context and corrections, action/feedback history, returning reviews, concrete briefs and accessible saved report templates. The host selects useful checks within your approved scope instead of running every Actor automatically. These instructions depend on the host's available research, storage, visualization and scheduling capabilities.
 
 ## Requirements
 
@@ -18,7 +18,15 @@ Focused requests go directly to [the shortest task route](skills/seo-growth-agen
 
 Start with `$seo-growth-agent` on OpenAI/Codex or `/ai-visibility-tracker:seo-growth-agent` on Claude Code for the complete campaign. It routes first use through guided onboarding and resumes saved settings on return. Specialist skills are roles guided by the host, not separate bundled processes.
 
-### Guided onboarding
+### Autopilot: set up once
+
+1. **Connect Apify once** — add the Apify connector (Claude/ChatGPT) or run `apify login` in your terminal and paste your API token from [Apify Console](https://console.apify.com/settings/integrations). The token never goes into chat.
+2. **Tell it your brand, website and any must-track keywords** — or say "figure it out". It researches competitors, buyer questions and pages itself.
+3. **Pick how often to track** — Weekly (recommended), Daily, Hourly pulse or On demand, each shown with its estimated Apify cost. That choice is your one approval.
+
+Then it runs the baseline, shows charts (citation rate by platform, trend over time, question × platform grid, who AI cites instead), gives the top recommendations with step-by-step implementation (page outlines, schema snippets, crawler fixes, third-party sources to get listed on), schedules the tracking and saves everything as a per-project memory in `~/.ai-visibility-tracker/projects/`. Each brand is its own project. Come back with "what's new?" and it catches up on every scheduled run. If your Apify credits run out, it pauses tracking and tells you to upgrade your Apify plan or add credits — nothing else to manage. See [autopilot](skills/seo-growth-agent/references/autopilot.md) and [credits](skills/seo-growth-agent/references/credits-and-billing.md).
+
+### Guided onboarding details
 
 Give the assistant a website and goal. Your host's LLM researches the public offering, audience signals, competitors, topics, keywords and AI questions, then proposes useful market/device and tracking defaults. It asks only for missing information on your side: account access, spending limits or consequential private preferences. Sources, assumptions and unmeasured metrics stay visible. Existing access and approvals are reused; paid work and recurring activation require authorization to the concrete plan.
 
@@ -53,6 +61,9 @@ Examples:
 - “Check whether ChatGPT, Perplexity and Gemini cite ahrefs.com for backlink research. Use these two exact buyer questions, with a $2 run budget.”
 - “Compare these two saved citation checks and show which page citations were gained or lost.”
 - “Create a content plan for topics where competing domains were cited and my site was absent.”
+- “Track my brand Acme (acme.com) in AI search. Figure out the keywords.”
+- “What's new with Acme? Show my dashboard.”
+- “Switch Acme to daily tracking.”
 - “Onboard my three websites, propose weekly citation checks and monthly competitor/backlink research, and show one portfolio budget before activating anything.”
 - “Pause tracking for the second website and keep the other sites running.”
 

@@ -1,19 +1,30 @@
 ---
 name: scheduled-visibility-tracking
-description: Configure, verify, resume, pause or change recurring AI visibility and SEO tracking for a website portfolio using an available host scheduler or Apify schedules, with approved budgets and reports.
+description: Set up, change, pause or resume hourly, daily or weekly AI visibility and SEO tracking for a project using Apify schedules and the host's recurring tasks, within the accepted plan's caps; handles credit pauses and catch-up reports.
 ---
 
-# Schedule and manage portfolio tracking
+# Schedule and manage project tracking
 
-Read the [portfolio state](../seo-growth-agent/references/campaign-state.md) and [scheduler procedures](references/scheduling.md). Use `visibility-onboarding` for missing settings. This skill manages authorized campaign schedules; the baseline visibility skill remains limited to its run. No scheduler, executable, credentials or server is bundled.
+Read the [portfolio state](../seo-growth-agent/references/campaign-state.md), [autopilot](../seo-growth-agent/references/autopilot.md), [credits](../seo-growth-agent/references/credits-and-billing.md) and [scheduler procedures](references/scheduling.md). Use `visibility-onboarding` for missing settings. No scheduler, executable, credentials or server is bundled.
+
+## Frequencies
+
+| User choice | Collection | Reports |
+| --- | --- | --- |
+| Weekly (default) | Full panel weekly; growth scan monthly | After each run |
+| Daily | Full panel daily; growth scan monthly | Daily digest; changes-only alerts optional |
+| Hourly pulse | Top 3 questions × primary platform hourly; full panel daily | Daily digest; immediate note only on a real change in the pulse |
+| On demand | None | When asked |
+
+"Change to daily", "go hourly", "slow down to weekly" or "stop tracking" are handled here: re-price from live pricing, update the plan revision, adjust only this project's schedules and verify by readback. A change that stays within the accepted monthly cap needs no question; a higher cost asks once with the new price.
 
 ## Prepare
 
-Require accepted website/market/panel revisions, user-owned Apify access, module scopes, cadence/timezone, baseline/per-run and portfolio budgets, duration, report destination and alert preferences. Confirm only missing or materially expanded authorization. Building the plugin is not authorization to activate the publisher's own recurring paid jobs.
+Require an accepted plan (from autopilot onboarding or an explicit approval) covering project/site/panel revisions, user-owned Apify access, modules, frequency/timezone, per-run and monthly caps and report location. That standing approval covers every occurrence; do not ask again per run. Building or installing the plugin is not authorization to activate recurring paid jobs.
 
 Check the host's actual scheduling tools and execution environment. Prefer a recurring **agent** job when the user wants the complete pipeline: collect due modules, enforce the portfolio ledger, compare results, generate actions and deliver reports. It must have durable state and user-owned authentication available at execution time. A reminder or wake-up with no execution access does not qualify.
 
-Offer Apify cloud schedules for fixed Actor data collection when a recurring agent is unavailable or the user chooses it. Explain which parts are automatic and which require opening the assistant. Apify native schedules do not execute this plugin's analysis skills or enforce a shared monthly portfolio ledger. If a hard monthly maximum or automatic end date is required, verify a controller that checks/stops launches; otherwise leave the schedule prepared and offer a manual or host-controlled plan.
+Offer Apify cloud schedules for fixed Actor data collection when a recurring agent is unavailable or the user chooses it. Explain which parts are automatic and which require opening the assistant. Apify native schedules do not execute this plugin's analysis skills or enforce a shared monthly portfolio ledger. Default setup uses both when available: Apify schedules collect data even while the chat is closed, and a host recurring agent (or the user's next visit) catches up, compares, charts and recommends. With collection-only schedules, the plan card states that the monthly cap is a projection enforced by per-run caps and the Apify account's own usage limit; that is acceptable for autopilot. Only when the user explicitly requires a hard monthly maximum or automatic end date, verify a controller that checks/stops launches before enabling.
 
 ## Configure and verify
 
