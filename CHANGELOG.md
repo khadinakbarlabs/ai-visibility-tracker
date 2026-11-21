@@ -1,5 +1,9 @@
 # Release notes
 
+## 0.6.2 — 2026-11-21
+
+- Removed the unused `assets/icon.svg`; manifests already point to `assets/icon.png`. Every packaged file is now a type the Claude directory policy review reads (md, json, yaml, png), with no behavior change.
+
 ## 0.6.1 — 2026-11-05
 
 - Apify connection now happens on the side: the assistant installs the official CLI if needed and starts `apify login --method console`, which opens Apify sign-in in the browser and returns credentials to the CLI automatically. Connector hosts show the Apify connector's one-click sign-in when the host can suggest connectors.
