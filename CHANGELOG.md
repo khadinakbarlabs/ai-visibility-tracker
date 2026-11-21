@@ -1,8 +1,12 @@
 # Release notes
 
+## 0.6.3 — 2026-11-22
+
+- Manifest cleanup for the Claude directory: removed listing-only and cross-tool keys from `.claude-plugin/plugin.json` and the unused agent-plugins root manifest. No behavior change.
+
 ## 0.6.2 — 2026-11-21
 
-- Removed the unused `assets/icon.svg`; manifests already point to `assets/icon.png`. Every packaged file is now a type the Claude directory policy review reads (md, json, yaml, png), with no behavior change.
+- Removed an unused duplicate icon file; manifests already point to the remaining plugin icon. Every packaged file is now a type the Claude directory policy review reads (md, json, yaml, png), with no behavior change.
 
 ## 0.6.1 — 2026-11-05
 

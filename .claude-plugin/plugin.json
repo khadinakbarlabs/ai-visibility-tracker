@@ -1,6 +1,6 @@
 {
   "name": "ai-visibility-tracker",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "AI search visibility tracking on autopilot: connect Apify once, give your brand and site, pick hourly, daily or weekly, and it tracks ChatGPT, Perplexity and Gemini citations, draws charts, recommends what to implement and remembers each project, using your own Apify credits.",
   "author": {
     "name": "Khadin Akbar"
@@ -57,6 +57,5 @@
     "feedback",
     "weekly-seo-review",
     "content-briefs"
-  ],
-  "displayName": "AI Search Visibility Tracker"
+  ]
 }

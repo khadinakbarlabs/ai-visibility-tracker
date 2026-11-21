@@ -93,7 +93,7 @@ This repository is the single source for all eleven skills, platform manifests, 
 
 ## Distribution
 
-The OpenAI export contains the portable root manifest and a synchronized Codex compatibility manifest. The Anthropic export contains only its native `.claude-plugin/plugin.json` manifest. Both include the same skills and references; only the OpenAI export includes `agents/openai.yaml` UI metadata. The native host evaluation suite is retained as text/YAML; no executable test scaffold or runtime is bundled. Archives isolate the provider-specific files.
+The OpenAI export contains the native `.codex-plugin/plugin.json` manifest. The Anthropic export contains only its native `.claude-plugin/plugin.json` manifest. Both include the same skills and references; only the OpenAI export includes `agents/openai.yaml` UI metadata. The native host evaluation suite is retained as text/YAML; no executable test scaffold or runtime is bundled. Archives isolate the provider-specific files.
 
 Host installation does not create paid runs or schedules. A verified local package is distinct from public directory approval. Public listings require real publisher, policy/support URLs, permitted availability and platform review; missing declarations are not fabricated.
 
